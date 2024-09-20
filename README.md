@@ -1,9 +1,7 @@
 # Notice
 
-This repository is temporarily frozen at v0.10.0. (Due to the absence of the administrator) We cannot respond to pull requests or ISSUE received.
-
-- We may update this repository in the future when we find bugs due to version upgrades of related libraries.
-- If there is anyone who can maintain this repository, please let us know.
+> [!NOTE] 
+This repository was forked from [stack-chan/m5stack-avatar](https://github.com/stack-chan/m5stack-avatar). It is not planned to be pulled to the original repository because the original is frozen. The development of this repository is progressing to improve & focus on facial functions.  
 
 # M5Stack-Avatar
 
@@ -30,7 +28,7 @@ Video: https://www.youtube.com/watch?v=C1Hj9kfY5qc
 
 ### Prerequisites
 
-* USB Driver is installed throwgh [Getting Started: Installing the USB Driver](http://www.m5stack.com/assets/docs/)
+* USB Driver is installed through [Getting Started: Installing the USB Driver](http://www.m5stack.com/assets/docs/)
 * Any of IDE is set up
   * This library is confirmed on __Arduino IDE__ and __Platform IO__ for now
 
