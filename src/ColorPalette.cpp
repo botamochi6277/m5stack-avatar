@@ -6,15 +6,15 @@
 
 namespace m5avatar {
 ColorPalette::ColorPalette()
-    : colors{{COLOR_PRIMARY, TFT_WHITE},
-             {COLOR_SECONDARY, TFT_BLACK},
-             {COLOR_BACKGROUND, TFT_BLACK},
-             {COLOR_BALLOON_FOREGROUND, TFT_BLACK},
-             {COLOR_BALLOON_BACKGROUND, TFT_WHITE}} {}
+    : palette_{{COLOR_PRIMARY, TFT_WHITE},
+               {COLOR_SECONDARY, TFT_BLACK},
+               {COLOR_BACKGROUND, TFT_BLACK},
+               {COLOR_BALLOON_FOREGROUND, TFT_BLACK},
+               {COLOR_BALLOON_BACKGROUND, TFT_WHITE}} {}
 
 uint16_t ColorPalette::get(const char* key) const {
-  auto itr = colors.find(key);
-  if (itr != colors.end()) {
+  auto itr = palette_.find(key);
+  if (itr != palette_.end()) {
     return itr->second;
   } else {
     // NOTE: if no value it returns BLACK(0x00) as the default value of the
@@ -25,10 +25,19 @@ uint16_t ColorPalette::get(const char* key) const {
 }
 
 void ColorPalette::set(const char* key, uint16_t value) {
-  auto itr = colors.find(key);
-  if (itr != colors.end()) {
+  auto itr = palette_.find(key);
+  if (itr != palette_.end()) {
     M5_LOGI("Overwriting");
+    itr->second = value;
+    return;
   }
-  itr->second = value;
+
+  // insert new color
+  palette_.insert(std::make_pair(key, value));
+}
+
+bool ColorPalette::contains(const char* key) {
+  auto itr = palette_.find(key);
+  return itr != palette_.end();
 }
 }  // namespace m5avatar
