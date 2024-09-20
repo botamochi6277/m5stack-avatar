@@ -6,6 +6,10 @@ src/*.ino
 const.h
 /tmp/
 
+# these cpp files are for debugging
+src/main.cpp
+src/sdl_main.cpp
+
 ### gitignore.io
 # Created by https://www.toptal.com/developers/gitignore/api/platformio,visualstudiocode,windows,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=platformio,visualstudiocode,windows,macos,linux
