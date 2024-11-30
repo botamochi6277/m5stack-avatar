@@ -25,6 +25,7 @@ class BaseEye : public Drawable {
   bool is_left_;
 
   // caches for drawing
+  ColorPalette *palette_;
   int16_t center_x_;
   int16_t center_y_;
   Gaze gaze_;
@@ -47,10 +48,11 @@ class EllipseEye : public BaseEye {
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
 };
 
-class GirlyEye : public BaseEye {
+class ToolEye1 : public BaseEye {
  public:
   using BaseEye::BaseEye;
   void drawEyeLid(M5Canvas *canvas);
+  void drawEyelash100(M5Canvas *canvas);
   void overwriteOpenRatio();
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
 };

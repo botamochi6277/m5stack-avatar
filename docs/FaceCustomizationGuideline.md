@@ -4,7 +4,7 @@
 
 <img src="https://github.com/user-attachments/assets/0f9da4df-f5f6-48ce-adc6-ac0405041b6f" width=50% alt="anatomy">
 
-`m5avatar::Face` consists of five components: 
+`m5avatar::Face` consists of five components:
 
 - left eye
 - right eye
@@ -15,7 +15,14 @@
 You can customize a face with replacing the components.
 [examples/face-and-color/face-and-color.ino](../examples/face-and-color/face-and-color.ino) is an example of using and customizing faces.
 
+## Color of Face
+
+<img src="https://github.com/user-attachments/assets/f18362f7-4d83-4dba-ad6f-a827c348b4c6" width=50% alt="anatomy">
+
+`ColorPalette` maps drawing locations and colors. When color is not assigned at a location, the location (part) is not drawn.
+
 ## Face templates
+
 Pre-assembled faces are available and defined in [src/faces/FaceTemplates.hpp](../src/faces/FaceTemplates.hpp)
 
 |preview|face|eye|mouth|eyebrow|notes|
@@ -23,22 +30,16 @@ Pre-assembled faces are available and defined in [src/faces/FaceTemplates.hpp](.
 |<img src="https://github.com/user-attachments/assets/5908e69f-9674-43df-a933-9f8d24fa488c/" width=20% alt="SimpleFace">|`SimpleFace`| `EllipseEye` | `RectMouth` | -- | Alternative  implementation of (Native) `Face`
 |<img src="https://github.com/user-attachments/assets/5457eaec-a774-46f5-90dd-7ee1a3e13c03" width=20% alt="DoggyFace">|`DoggyFace`|`DoggyEye`|`DoggyMouth`|`RectEyebrow`|Alternative  implementation of `DogFace`|
 |<img src="https://github.com/user-attachments/assets/0ddd047a-76bf-450f-8a32-d245fdc40380" width=20% alt="OmegaFace">|`OmegaFace`|`EllipseEye`|`OmegaMouth`|--||
-|<img src="https://github.com/user-attachments/assets/fc0a5d3f-bf0d-4563-aa19-1e2d565e83aa" width=20% alt="GirlyFace">|`GirlyFace`|`GirlyEye`|`UShapeMouth`|`EllipseEyebrow`||
-
-
-
-
+|<img src="https://github.com/user-attachments/assets/fc0a5d3f-bf0d-4563-aa19-1e2d565e83aa" width=20% alt="GirlyFace">|`GirlyFace`|`ToolEye1`|`UShapeMouth`|`EllipseEyebrow`||
 
 ## Eyes
 
 Predefined eye components are in [src/Eyes.hpp](../src/Eyes.hpp) and [src/Eyes.cpp](../src/Eyes.cpp)
 
 - `EllipseEye` (Extended implement of `Eye`)
-- `GirlyEye`
+- `ToolEye1`
 - `PinkDemonEye`
 - `DoggyEye` (Alternative implement of `DogEye`)
-
-
 
 ## Mouth
 
@@ -57,10 +58,10 @@ Predefined mouth components are in [src/EyeBrow.hpp](../src/EyeBrow.hpp) and [sr
 - `EllipseEyebrow`
 - `BowEyebrow`
 
-
 ## Notes
 
 ### Native files
+
 - [src/Eye.h](../src/Eye.h) and [src/Eye.cpp](../src/Eye.cpp) : Native `Eye` code
 - [src/Mouth.h](../src/Mouth.h) and [src/Mouth.cpp](../src/Mouth.cpp) : Native `Mouth` code
 - [src/Eyeblow.h](../src/Eyeblow.h) and [src/Eyeblow.cpp](../src/Eyeblow.cpp) : Native `Eyeblow` code for Eyebrow

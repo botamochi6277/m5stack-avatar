@@ -20,7 +20,7 @@ uint16_t ColorPalette::get(DrawingLocation key) const {
   } else {
     // NOTE: if no value it returns BLACK(0x00) as the default value of the
     // type(int)
-    M5_LOGI("no color with the key %d", key);
+    // M5_LOGI("no color with the key %d", key);
     return TFT_BLACK;
   }
 }
