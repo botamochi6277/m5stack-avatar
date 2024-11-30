@@ -198,8 +198,8 @@ void GirlyEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
                         this->height_ / 2, primary_color_);
 
     // uint16_t accent_color = M5.Lcd.color24to16(0x019E73);
-    if (color_palette->contains(COLOR_KEY_IRIS_2)) {
-      uint16_t iris_color_2 = color_palette->get(COLOR_KEY_IRIS_2);
+    if (color_palette->contains(DrawingLocation::kIris2)) {
+      uint16_t iris_color_2 = color_palette->get(DrawingLocation::kIris2);
       canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2 - thickness,
                           this->height_ / 2 - thickness, iris_color_2);
     }
