@@ -230,9 +230,9 @@
 <!-- Node6 -->
 <g id="node7" class="node">
 <title>Node6</title>
-<g id="a_node7"><a xlink:href="classm5avatar_1_1_girly_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="407.5,-453 310.5,-453 310.5,-434 407.5,-434 407.5,-453"/>
-<text text-anchor="middle" x="359" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00">m5avatar::GirlyEye</text>
+<g id="a_node7"><a xlink:href="classm5avatar_1_1_pink_demon_eye.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="423,-453 295,-453 295,-434 423,-434 423,-453"/>
+<text text-anchor="middle" x="359" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00">m5avatar::PinkDemonEye</text>
 </a>
 </g>
 </g>
@@ -245,16 +245,16 @@
 <!-- Node7 -->
 <g id="node8" class="node">
 <title>Node7</title>
-<g id="a_node8"><a xlink:href="classm5avatar_1_1_pink_demon_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="423,-416 295,-416 295,-397 423,-397 423,-416"/>
-<text text-anchor="middle" x="359" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">m5avatar::PinkDemonEye</text>
+<g id="a_node8"><a xlink:href="classm5avatar_1_1_toon_eye1.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="411,-416 307,-416 307,-397 411,-397 411,-416"/>
+<text text-anchor="middle" x="359" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">m5avatar::ToonEye1</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
 <title>Node3&#45;&gt;Node7</title>
-<path fill="none" stroke="#63b8ff" d="M259.94,-406.5C271.33,-406.5 283.26,-406.5 294.73,-406.5"/>
+<path fill="none" stroke="#63b8ff" d="M260.24,-406.5C275.52,-406.5 291.78,-406.5 306.56,-406.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="260.3,-403 250.3,-406.5 260.3,-410 260.3,-403"/>
 </g>
 <!-- Node9 -->

@@ -28,7 +28,6 @@ var annotated_dup =
       [ "Eyeblow", "classm5avatar_1_1_eyeblow.html", null ],
       [ "Face", "classm5avatar_1_1_face.html", null ],
       [ "Gaze", "classm5avatar_1_1_gaze.html", null ],
-      [ "GirlyEye", "classm5avatar_1_1_girly_eye.html", null ],
       [ "GirlyFace", "classm5avatar_1_1_girly_face.html", null ],
       [ "GirlyFace2", "classm5avatar_1_1_girly_face2.html", null ],
       [ "Mouth", "classm5avatar_1_1_mouth.html", null ],
@@ -40,6 +39,7 @@ var annotated_dup =
       [ "RectEyebrow", "classm5avatar_1_1_rect_eyebrow.html", null ],
       [ "RectMouth", "classm5avatar_1_1_rect_mouth.html", null ],
       [ "SimpleFace", "classm5avatar_1_1_simple_face.html", null ],
+      [ "ToonEye1", "classm5avatar_1_1_toon_eye1.html", null ],
       [ "UShapeMouth", "classm5avatar_1_1_u_shape_mouth.html", null ]
     ] ]
 ];
