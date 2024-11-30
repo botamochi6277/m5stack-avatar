@@ -26,14 +26,14 @@ enum class DrawingLocation : unsigned char {
   kEyelid,
   kIris1,
   kIris2,
-  kIrisOutline,  // required
+  kIrisBackground,  // required
   kEyeHighlight,
   kSclera,
-  kScleraOutline,
+  kScleraBackground,
   // Eyebrow
   kEyeBrow,
   // Mouth
-  kMouthOutline,
+  kMouthBackground,
   kInnerMouse,
   kTongue,
   // Cheek
@@ -66,7 +66,7 @@ class ColorPalette {
 }  // namespace m5avatar
 
 // defines for backward compatibility
-#define COLOR_PRIMARY m5avatar::DrawingLocation::kIrisOutline
+#define COLOR_PRIMARY m5avatar::DrawingLocation::kIrisBackground
 #define COLOR_SECONDARY m5avatar::DrawingLocation::kIris1
 #define COLOR_BACKGROUND m5avatar::DrawingLocation::kSkin
 #define COLOR_BALLOON_FOREGROUND m5avatar::DrawingLocation::kBalloonForeground

@@ -16,16 +16,17 @@ void BaseEye::update(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   center_y_ = rect.getCenterY();
   gaze_ = this->is_left_ ? ctx->getLeftGaze() : ctx->getRightGaze();
   ColorPalette *cp = ctx->getColorPalette();
-  primary_color_ = ctx->getColorDepth() == 1 ? 1 : cp->get(COLOR_PRIMARY);
-  secondary_color_ = ctx->getColorDepth() == 1
-                         ? 1
-                         : ctx->getColorPalette()->get(COLOR_SECONDARY);
-  background_color_ =
-      ctx->getColorDepth() == 1 ? ERACER_COLOR : cp->get(COLOR_BACKGROUND);
 
-  // offset computed from gaze direction
-  shifted_x_ = center_x_ + gaze_.getHorizontal() * 8;
-  shifted_y_ = center_y_ + gaze_.getVertical() * 5;
+  // cache of required colors
+  // ctx->getColorDepth() == 1 : binary mode (black & white)
+  iris_bg_color_ =
+      ctx->getColorDepth() == 1 ? 1 : cp->get(DrawingLocation::kIrisBackground);
+  skin_color_ = ctx->getColorDepth() == 1 ? ERACER_COLOR
+                                          : cp->get(DrawingLocation::kSkin);
+
+  // iris position computed from gaze direction
+  iris_x_ = center_x_ + gaze_.getHorizontal() * 8;
+  iris_y_ = center_y_ + gaze_.getVertical() * 5;
   open_ratio_ =
       this->is_left_ ? ctx->getLeftEyeOpenRatio() : ctx->getRightEyeOpenRatio();
   expression_ = ctx->getExpression();
@@ -36,60 +37,59 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   if (open_ratio_ == 0 || expression_ == Expression::Sleepy) {
     // eye closed
     // NOTE: the center of closed eye is lower than the center of bbox
-    canvas->fillRect(shifted_x_ - (this->width_ / 2),
-                     shifted_y_ - 2 + this->height_ / 4, this->width_, 4,
-                     primary_color_);
+    canvas->fillRect(iris_x_ - (this->width_ / 2),
+                     iris_y_ - 2 + this->height_ / 4, this->width_, 4,
+                     iris_bg_color_);
     return;
   } else if (expression_ == Expression::Happy) {
-    auto wink_base_y = shifted_y_ + this->height_ / 4;
+    auto wink_base_y = iris_y_ + this->height_ / 4;
     uint32_t thickness = 4;
-    canvas->fillEllipse(shifted_x_, wink_base_y + (1 / 8) * this->height_,
+    canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
                         this->width_ / 2, this->height_ / 4 + thickness,
-                        primary_color_);
+                        iris_bg_color_);
     // mask
-    canvas->fillEllipse(shifted_x_,
+    canvas->fillEllipse(iris_x_,
                         wink_base_y + (1 / 8) * this->height_ + thickness,
                         this->width_ / 2 - thickness,
-                        this->height_ / 4 + thickness, background_color_);
-    canvas->fillRect(shifted_x_ - this->width_ / 2, wink_base_y + thickness / 2,
-                     this->width_ + 1, this->height_ / 4 + 1,
-                     background_color_);
+                        this->height_ / 4 + thickness, skin_color_);
+    canvas->fillRect(iris_x_ - this->width_ / 2, wink_base_y + thickness / 2,
+                     this->width_ + 1, this->height_ / 4 + 1, skin_color_);
     return;
   }
 
-  canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2,
-                      this->height_ / 2, primary_color_);
+  canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2, this->height_ / 2,
+                      iris_bg_color_);
 
   // note: you cannot define variable in switch scope
   int x0, y0, x1, y1, x2, y2;
   switch (expression_) {
     case Expression::Angry:
-      x0 = shifted_x_ - width_ / 2;
-      y0 = shifted_y_ - height_ / 2;
-      x1 = shifted_x_ + width_ / 2;
+      x0 = iris_x_ - width_ / 2;
+      y0 = iris_y_ - height_ / 2;
+      x1 = iris_x_ + width_ / 2;
       y1 = y0;
       x2 = this->is_left_ ? x0 : x1;
-      y2 = shifted_y_ - height_ / 4;
-      canvas->fillTriangle(x0, y0, x1, y1, x2, y2, background_color_);
+      y2 = iris_y_ - height_ / 4;
+      canvas->fillTriangle(x0, y0, x1, y1, x2, y2, skin_color_);
       break;
     case Expression::Sad:
-      x0 = shifted_x_ - width_ / 2;
-      y0 = shifted_y_ - height_ / 2;
-      x1 = shifted_x_ + width_ / 2;
+      x0 = iris_x_ - width_ / 2;
+      y0 = iris_y_ - height_ / 2;
+      x1 = iris_x_ + width_ / 2;
       y1 = y0;
       x2 = this->is_left_ ? x1 : x0;
-      y2 = shifted_y_ - height_ / 4;
-      canvas->fillTriangle(x0, y0, x1, y1, x2, y2, background_color_);
+      y2 = iris_y_ - height_ / 4;
+      canvas->fillTriangle(x0, y0, x1, y1, x2, y2, skin_color_);
       break;
     case Expression::Doubt:
       // top left
-      x0 = shifted_x_ - width_ / 2;
-      y0 = shifted_y_ - height_ / 2;
+      x0 = iris_x_ - width_ / 2;
+      y0 = iris_y_ - height_ / 2;
       // bottom right
-      x1 = shifted_x_ + width_ / 2;
-      y1 = shifted_y_ - height_ / 4;
+      x1 = iris_x_ + width_ / 2;
+      y1 = iris_y_ - height_ / 4;
 
-      canvas->fillRect(x0, y0, x1 - x0, y1 - y0, background_color_);
+      canvas->fillRect(x0, y0, x1 - x0, y1 - y0, skin_color_);
       break;
     case Expression::Sleepy:
       break;
@@ -101,15 +101,15 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
 void GirlyEye::drawEyeLid(M5Canvas *canvas) {
   // eyelid
-  auto upper_eyelid_y = shifted_y_ - 0.8f * height_ / 2 +
-                        (1.0f - open_ratio_) * this->height_ * 0.6;
+  auto upper_eyelid_y =
+      iris_y_ - 0.8f * height_ / 2 + (1.0f - open_ratio_) * this->height_ * 0.6;
 
   float eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1, eyelash_x2, eyelash_y2;
-  eyelash_x0 = this->is_left_ ? shifted_x_ + 22 : shifted_x_ - 22;
+  eyelash_x0 = this->is_left_ ? iris_x_ + 22 : iris_x_ - 22;
   eyelash_y0 = upper_eyelid_y - 27;
-  eyelash_x1 = this->is_left_ ? shifted_x_ + 26 : shifted_x_ - 26;
+  eyelash_x1 = this->is_left_ ? iris_x_ + 26 : iris_x_ - 26;
   eyelash_y1 = upper_eyelid_y;
-  eyelash_x2 = this->is_left_ ? shifted_x_ - 10 : shifted_x_ + 10;
+  eyelash_x2 = this->is_left_ ? iris_x_ - 10 : iris_x_ + 10;
   eyelash_y2 = upper_eyelid_y;
 
   float tilt = 0.0f;
@@ -124,26 +124,26 @@ void GirlyEye::drawEyeLid(M5Canvas *canvas) {
 
   if ((open_ratio_ < 0.99f) || (abs(tilt) > 0.1f)) {
     // mask
-    // top:shifted_y_ - this->height_ / 2
+    // top:iris_y_ - this->height_ / 2
     // bottom: upper_eyelid_y
-    float mask_top_left_x = shifted_x_ - (this->width_ / 2);
-    float mask_top_left_y = shifted_y_ - 0.75f * this->height_;
-    float mask_bottom_right_x = shifted_x_ + (this->width_ / 2);
+    float mask_top_left_x = iris_x_ - (this->width_ / 2);
+    float mask_top_left_y = iris_y_ - 0.75f * this->height_;
+    float mask_bottom_right_x = iris_x_ + (this->width_ / 2);
     float mask_bottom_right_y = upper_eyelid_y;
 
     fillRectRotatedAround(canvas, mask_top_left_x, mask_top_left_y,
                           mask_bottom_right_x, mask_bottom_right_y, tilt,
-                          shifted_x_, upper_eyelid_y, background_color_);
+                          iris_x_, upper_eyelid_y, skin_color_);
 
     // eyelid
-    float eyelid_top_left_x = shifted_x_ - (this->width_ / 2) + bias;
+    float eyelid_top_left_x = iris_x_ - (this->width_ / 2) + bias;
     float eyelid_top_left_y = upper_eyelid_y - 4;
-    float eyelid_bottom_right_x = shifted_x_ + (this->width_ / 2) + bias;
+    float eyelid_bottom_right_x = iris_x_ + (this->width_ / 2) + bias;
     float eyelid_bottom_right_y = upper_eyelid_y;
 
     fillRectRotatedAround(canvas, eyelid_top_left_x, eyelid_top_left_y,
                           eyelid_bottom_right_x, eyelid_bottom_right_y, tilt,
-                          shifted_x_, upper_eyelid_y, primary_color_);
+                          iris_x_, upper_eyelid_y, iris_bg_color_);
 
     eyelash_x0 += bias;
     eyelash_x1 += bias;
@@ -151,17 +151,19 @@ void GirlyEye::drawEyeLid(M5Canvas *canvas) {
   }
 
   // eyelash
-  rotatePointAround(eyelash_x0, eyelash_y0, tilt, shifted_x_, upper_eyelid_y);
-  rotatePointAround(eyelash_x1, eyelash_y1, tilt, shifted_x_, upper_eyelid_y);
-  rotatePointAround(eyelash_x2, eyelash_y2, tilt, shifted_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x0, eyelash_y0, tilt, iris_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x1, eyelash_y1, tilt, iris_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x2, eyelash_y2, tilt, iris_x_, upper_eyelid_y);
   canvas->fillTriangle(eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1,
-                       eyelash_x2, eyelash_y2, primary_color_);
+                       eyelash_x2, eyelash_y2, iris_bg_color_);
 }
 
 void GirlyEye::overwriteOpenRatio() {
   switch (expression_) {
     case Expression::Doubt:
-      open_ratio_ = 0.6f;
+      if (open_ratio_ > 0.6f) {
+        open_ratio_ = 0.6f;
+      }
       break;
 
     case Expression::Sleepy:
@@ -173,20 +175,20 @@ void GirlyEye::overwriteOpenRatio() {
 void GirlyEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   this->update(canvas, rect, ctx);
   this->overwriteOpenRatio();
-  auto wink_base_y = shifted_y_ + (1.0f - open_ratio_) * this->height_ / 4;
+  auto wink_base_y = iris_y_ + (1.0f - open_ratio_) * this->height_ / 4;
 
   uint32_t thickness = 4;
   if (expression_ == Expression::Happy) {
-    canvas->fillEllipse(shifted_x_, wink_base_y + (1 / 8) * this->height_,
+    canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
                         this->width_ / 2, this->height_ / 4 + thickness,
-                        primary_color_);
+                        iris_bg_color_);
     // mask
-    canvas->fillEllipse(shifted_x_,
+    canvas->fillEllipse(iris_x_,
                         wink_base_y + (1 / 8) * this->height_ + thickness,
                         this->width_ / 2 - thickness,
-                        this->height_ / 4 + thickness, background_color_);
-    canvas->fillRect(shifted_x_ - this->width_ / 2, wink_base_y + thickness / 2,
-                     this->width_, this->height_ / 4, background_color_);
+                        this->height_ / 4 + thickness, skin_color_);
+    canvas->fillRect(iris_x_ - this->width_ / 2, wink_base_y + thickness / 2,
+                     this->width_, this->height_ / 4, skin_color_);
     // this->drawEyeLid(canvas);
     return;
   }
@@ -194,40 +196,39 @@ void GirlyEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   ColorPalette *color_palette = ctx->getColorPalette();
   if (open_ratio_ > 0.1f) {
     // iris background
-    canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2,
-                        this->height_ / 2, primary_color_);
+    canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2, this->height_ / 2,
+                        iris_bg_color_);
 
-    // uint16_t accent_color = M5.Lcd.color24to16(0x019E73);
     if (color_palette->contains(DrawingLocation::kIris2)) {
       uint16_t iris_color_2 = color_palette->get(DrawingLocation::kIris2);
-      canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2 - thickness,
+      canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2 - thickness,
                           this->height_ / 2 - thickness, iris_color_2);
     }
 
     // upper half moon
-    canvas->fillArc(shifted_x_, shifted_y_, width_ / 2, 0, 180.0f, 360.0f,
-                    primary_color_);
+    canvas->fillArc(iris_x_, iris_y_, width_ / 2, 0, 180.0f, 360.0f,
+                    iris_bg_color_);
 
-    canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 4,
-                        this->height_ / 4, primary_color_);
+    canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 4, this->height_ / 4,
+                        iris_bg_color_);
     // high light
-    canvas->fillEllipse(shifted_x_ - width_ / 6, shifted_y_ - height_ / 6,
-                        width_ / 8, height_ / 8, 0xffffff);
+    canvas->fillEllipse(iris_x_ - width_ / 6, iris_y_ - height_ / 6, width_ / 8,
+                        height_ / 8, 0xffffff);
   }
   this->drawEyeLid(canvas);
 }
 
 void PinkDemonEye::drawEyeLid(M5Canvas *canvas) {
   // eyelid
-  auto upper_eyelid_y = shifted_y_ - 0.8f * height_ / 2 +
-                        (1.0f - open_ratio_) * this->height_ * 0.6;
+  auto upper_eyelid_y =
+      iris_y_ - 0.8f * height_ / 2 + (1.0f - open_ratio_) * this->height_ * 0.6;
 
   float eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1, eyelash_x2, eyelash_y2;
-  eyelash_x0 = this->is_left_ ? shifted_x_ + 22 : shifted_x_ - 22;
+  eyelash_x0 = this->is_left_ ? iris_x_ + 22 : iris_x_ - 22;
   eyelash_y0 = upper_eyelid_y - 27;
-  eyelash_x1 = this->is_left_ ? shifted_x_ + 26 : shifted_x_ - 26;
+  eyelash_x1 = this->is_left_ ? iris_x_ + 26 : iris_x_ - 26;
   eyelash_y1 = upper_eyelid_y;
-  eyelash_x2 = this->is_left_ ? shifted_x_ - 10 : shifted_x_ + 10;
+  eyelash_x2 = this->is_left_ ? iris_x_ - 10 : iris_x_ + 10;
   eyelash_y2 = upper_eyelid_y;
 
   float tilt = 0.0f;
@@ -240,32 +241,32 @@ void PinkDemonEye::drawEyeLid(M5Canvas *canvas) {
 
   if ((open_ratio_ < 0.99f) || (abs(tilt) > 0.1f)) {
     // mask
-    // top:shifted_y_ - this->height_ / 2
+    // top:iris_y_ - this->height_ / 2
     // bottom: upper_eyelid_y
-    float mask_top_left_x = shifted_x_ - (this->width_ / 2);
-    float mask_top_left_y = shifted_y_ - 0.75f * this->height_;
-    float mask_bottom_right_x = shifted_x_ + (this->width_ / 2);
+    float mask_top_left_x = iris_x_ - (this->width_ / 2);
+    float mask_top_left_y = iris_y_ - 0.75f * this->height_;
+    float mask_bottom_right_x = iris_x_ + (this->width_ / 2);
     float mask_bottom_right_y = upper_eyelid_y;
 
     fillRectRotatedAround(canvas, mask_top_left_x, mask_top_left_y,
                           mask_bottom_right_x, mask_bottom_right_y, tilt,
-                          shifted_x_, upper_eyelid_y, background_color_);
+                          iris_x_, upper_eyelid_y, skin_color_);
 
     // eyelid
-    float eyelid_top_left_x = shifted_x_ - (this->width_ / 2);
+    float eyelid_top_left_x = iris_x_ - (this->width_ / 2);
     float eyelid_top_left_y = upper_eyelid_y - 4;
-    float eyelid_bottom_right_x = shifted_x_ + (this->width_ / 2);
+    float eyelid_bottom_right_x = iris_x_ + (this->width_ / 2);
     float eyelid_bottom_right_y = upper_eyelid_y;
 
     fillRectRotatedAround(canvas, eyelid_top_left_x, eyelid_top_left_y,
                           eyelid_bottom_right_x, eyelid_bottom_right_y, tilt,
-                          shifted_x_, upper_eyelid_y, primary_color_);
+                          iris_x_, upper_eyelid_y, iris_bg_color_);
   }
 
   // eyelash
-  rotatePointAround(eyelash_x0, eyelash_y0, tilt, shifted_x_, upper_eyelid_y);
-  rotatePointAround(eyelash_x1, eyelash_y1, tilt, shifted_x_, upper_eyelid_y);
-  rotatePointAround(eyelash_x2, eyelash_y2, tilt, shifted_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x0, eyelash_y0, tilt, iris_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x1, eyelash_y1, tilt, iris_x_, upper_eyelid_y);
+  rotatePointAround(eyelash_x2, eyelash_y2, tilt, iris_x_, upper_eyelid_y);
 }
 
 void PinkDemonEye::overwriteOpenRatio() {
@@ -288,22 +289,22 @@ void PinkDemonEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // main eye
   if (open_ratio_ > 0.1f) {
     // bg
-    canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2,
-                        this->height_ / 2, primary_color_);
+    canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2, this->height_ / 2,
+                        iris_bg_color_);
     uint16_t accent_color = M5.Lcd.color24to16(0x00A1FF);
-    canvas->fillEllipse(shifted_x_, shifted_y_, this->width_ / 2 - thickness,
+    canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2 - thickness,
                         this->height_ / 2 - thickness, accent_color);
     // upper
     uint16_t w1 = width_ * 0.92f;
     uint16_t h1 = this->height_ * 0.69f;
-    uint16_t y1 = shifted_y_ - this->height_ / 2 + h1 / 2;
-    canvas->fillEllipse(shifted_x_, y1, w1 / 2, h1 / 2, primary_color_);
+    uint16_t y1 = iris_y_ - this->height_ / 2 + h1 / 2;
+    canvas->fillEllipse(iris_x_, y1, w1 / 2, h1 / 2, iris_bg_color_);
     // high light
     uint16_t w2 = width_ * 0.577f;
     uint16_t h2 = this->height_ * 0.4f;
-    uint16_t y2 = shifted_y_ - this->height_ / 2 + thickness + h2 / 2;
+    uint16_t y2 = iris_y_ - this->height_ / 2 + thickness + h2 / 2;
 
-    canvas->fillEllipse(shifted_x_, y2, w2 / 2, h2 / 2, 0xffffff);
+    canvas->fillEllipse(iris_x_, y2, w2 / 2, h2 / 2, 0xffffff);
   }
   this->drawEyeLid(canvas);
 }
@@ -313,14 +314,14 @@ void DoggyEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
   if (this->open_ratio_ == 0) {
     // eye closed
-    canvas->fillRect(center_x_ - 15, center_y_ - 2, 30, 4, primary_color_);
+    canvas->fillRect(center_x_ - 15, center_y_ - 2, 30, 4, iris_bg_color_);
     return;
   }
-  canvas->fillEllipse(center_x_, center_y_, 30, 25, primary_color_);
-  canvas->fillEllipse(center_x_, center_y_, 28, 23, background_color_);
+  canvas->fillEllipse(center_x_, center_y_, 30, 25, iris_bg_color_);
+  canvas->fillEllipse(center_x_, center_y_, 28, 23, skin_color_);
 
-  canvas->fillEllipse(shifted_x_, shifted_y_, 18, 18, primary_color_);
-  canvas->fillEllipse(shifted_x_ - 3, shifted_y_ - 3, 3, 3, background_color_);
+  canvas->fillEllipse(iris_x_, iris_y_, 18, 18, iris_bg_color_);
+  canvas->fillEllipse(iris_x_ - 3, iris_y_ - 3, 3, 3, skin_color_);
 }
 
 }  // namespace m5avatar

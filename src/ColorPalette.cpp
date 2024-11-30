@@ -8,7 +8,7 @@ namespace m5avatar {
 
 using DLoc = DrawingLocation;
 ColorPalette::ColorPalette()
-    : palette_{{DLoc::kIrisOutline, TFT_WHITE},
+    : palette_{{DLoc::kIrisBackground, TFT_WHITE},
                {DLoc::kSkin, TFT_BLACK},
                {DLoc::kBalloonForeground, TFT_BLACK},
                {DLoc::kBalloonBackground, TFT_WHITE}} {}
