@@ -101,7 +101,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   }
 }
 
-void ToonEye1::drawEyeLid(M5Canvas *canvas) {
+void ToonEye1::drawEyelid(M5Canvas *canvas) {
   if (!palette_->contains(DrawingLocation::kEyelid)) {
     return;
   }
@@ -305,10 +305,14 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
                           width_ / 8, height_ / 8, highlight_color);
     }
   }
-  this->drawEyeLid(canvas);
+  if (this->open_ratio_ < 0.99f || this->expression_ != Expression::Neutral) {
+    this->drawEyelid(canvas);  // draw eyelid & eyelash
+  } else {
+    this->drawEyelash100(canvas);
+  }
 }
 
-void PinkDemonEye::drawEyeLid(M5Canvas *canvas) {
+void PinkDemonEye::drawEyelid(M5Canvas *canvas) {
   // eyelid
   auto upper_eyelid_y =
       iris_y_ - 0.8f * height_ / 2 + (1.0f - open_ratio_) * this->height_ * 0.6;
@@ -396,7 +400,7 @@ void PinkDemonEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
     canvas->fillEllipse(iris_x_, y2, w2 / 2, h2 / 2, 0xffffff);
   }
-  this->drawEyeLid(canvas);
+  this->drawEyelid(canvas);
 }
 
 void DoggyEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {

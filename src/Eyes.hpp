@@ -51,7 +51,7 @@ class EllipseEye : public BaseEye {
 class ToonEye1 : public BaseEye {
  public:
   using BaseEye::BaseEye;
-  void drawEyeLid(M5Canvas *canvas);
+  void drawEyelid(M5Canvas *canvas);
   void drawEyelash100(M5Canvas *canvas);
   void overwriteOpenRatio();
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
@@ -60,7 +60,7 @@ class ToonEye1 : public BaseEye {
 class PinkDemonEye : public BaseEye {
  public:
   using BaseEye::BaseEye;
-  void drawEyeLid(M5Canvas *canvas);
+  void drawEyelid(M5Canvas *canvas);
   void overwriteOpenRatio();
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
 };
