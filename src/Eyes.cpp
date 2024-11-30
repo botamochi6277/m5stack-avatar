@@ -101,7 +101,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   }
 }
 
-void ToolEye1::drawEyeLid(M5Canvas *canvas) {
+void ToonEye1::drawEyeLid(M5Canvas *canvas) {
   if (!palette_->contains(DrawingLocation::kEyelid)) {
     return;
   }
@@ -170,7 +170,7 @@ void ToolEye1::drawEyeLid(M5Canvas *canvas) {
                        eyelash_x2, eyelash_y2, eyelash_color);
 }
 
-void ToolEye1::drawEyelash100(M5Canvas *canvas) {
+void ToonEye1::drawEyelash100(M5Canvas *canvas) {
   if (!palette_->contains(DrawingLocation::kEyelash)) {
     return;
   }
@@ -235,7 +235,7 @@ void ToolEye1::drawEyelash100(M5Canvas *canvas) {
                        eyelash_x2, eyelash_y2, eyelash_color);
 }
 
-void ToolEye1::overwriteOpenRatio() {
+void ToonEye1::overwriteOpenRatio() {
   switch (expression_) {
     case Expression::Doubt:
       if (open_ratio_ > 0.6f) {
@@ -249,7 +249,7 @@ void ToolEye1::overwriteOpenRatio() {
   }
 }
 
-void ToolEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
+void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // NOTE https://comic.smiles55.jp/guide/9879/
   this->update(canvas, rect, ctx);
   this->overwriteOpenRatio();
@@ -286,7 +286,8 @@ void ToolEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
     if (palette_->contains(DrawingLocation::kIris2)) {
       auto iris_color_2 = palette_->get(DrawingLocation::kIris2);
       // center horizontal line
-      canvas->fillRect(iris_x_ - width_ / 2, iris_y_, width_, 1, iris_color_2);
+      canvas->fillRect(iris_x_ - width_ / 2 + thickness, iris_y_,
+                       width_ - 2 * thickness + 1, 1, iris_color_2);
       // lower half moon will be filled
       canvas->floodFill(iris_x_, iris_y_ + 2, iris_color_2);
     }

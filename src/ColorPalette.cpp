@@ -9,6 +9,7 @@ namespace m5avatar {
 using DLoc = DrawingLocation;
 ColorPalette::ColorPalette()
     : palette_{{DLoc::kIrisBackground, TFT_WHITE},
+               {DLoc::kMouthBackground, TFT_WHITE},
                {DLoc::kSkin, TFT_BLACK},
                {DLoc::kBalloonForeground, TFT_BLACK},
                {DLoc::kBalloonBackground, TFT_WHITE}} {}
@@ -28,7 +29,7 @@ uint16_t ColorPalette::get(DrawingLocation key) const {
 void ColorPalette::set(DrawingLocation key, uint16_t value) {
   auto itr = palette_.find(key);
   if (itr != palette_.end()) {
-    M5_LOGI("Overwriting");
+    // M5_LOGI("Overwriting");
     itr->second = value;
     return;
   }

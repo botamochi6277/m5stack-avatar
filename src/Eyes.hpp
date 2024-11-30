@@ -48,7 +48,7 @@ class EllipseEye : public BaseEye {
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
 };
 
-class ToolEye1 : public BaseEye {
+class ToonEye1 : public BaseEye {
  public:
   using BaseEye::BaseEye;
   void drawEyeLid(M5Canvas *canvas);
