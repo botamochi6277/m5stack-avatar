@@ -28,6 +28,46 @@ void fillRectRotatedAround(M5Canvas *canvas, float top_left_x, float top_left_y,
                            float bottom_right_x, float bottom_right_y,
                            float angle, uint16_t cx, uint16_t cy,
                            uint16_t color);
+/**
+ * @brief compute circle parameters though 3 points,
+ * (x1,y1), (x2,y2), and (x3,y3)
+ *
+ * @param r radius
+ * @param cx center of x
+ * @param cy center of y
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @param x3
+ * @param y3
+ */
+void computeParamsOfCirclePassingThroughThreePoints(float &r, float &cx,
+                                                    float &cy, float x1,
+                                                    float y1, float x2,
+                                                    float y2, float x3,
+                                                    float y3);
+
+void computeAnglesOfArcPassingThroughThreePoints(float &min_angle,
+                                                 float &max_angle, float x1,
+                                                 float y1, float x2, float y2,
+                                                 float x3, float y3);
+/**
+ * @brief draw arc with three waypoints
+ *
+ * @param canvas
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @param x3
+ * @param y3
+ * @param thickness
+ * @param clockwise
+ * @param color
+ */
+void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
+             float y3, uint8_t thickness, bool clockwise, uint16_t color);
 
 }  // namespace m5avatar
 
