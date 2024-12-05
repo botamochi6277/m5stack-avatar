@@ -69,8 +69,8 @@ void drawCircle(M5Canvas *canvas, float x1, float y1, float x2, float y2,
  * @param clockwise
  * @param color
  */
-void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
-             float y3, uint8_t thickness = 4, bool clockwise = true,
+void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2,
+             float via_x, float via_y, uint8_t thickness = 4,
              uint16_t color = 0xffff, uint8_t offset = 0);
 
 void fillArc(M5Canvas *canvas, float x1, float y1, float x2, float y2,
