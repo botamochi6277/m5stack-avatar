@@ -49,9 +49,27 @@ class EllipseEye : public BaseEye {
 };
 
 class ToonEye1 : public BaseEye {
+ protected:
+  void computeEyelidBaseWaypoints(float &medial_x, float &medial_y,
+                                  float &center_x, float &center_y,
+                                  float &lateral_x, float &lateral_y,
+                                  uint16_t eyelid_width, uint16_t eyelid_height,
+                                  uint16_t eyelid_bottom);
+  void computeEyelashBaseWaypoints(float &tip_x, float &tip_y, float &bottom_x,
+                                   float &bottom_y, float &medial_x,
+                                   float &medial_y, uint16_t eye_lash_width,
+                                   uint16_t eye_lash_height,
+                                   uint16_t eyelid_lateral_x,
+                                   uint16_t eyelid_bottom,
+                                   uint16_t eyelid_width,
+                                   uint16_t eyelid_height);
+
  public:
   using BaseEye::BaseEye;
+
+  void update2(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
   void drawEyelid(M5Canvas *canvas);
+  void drawEyelash(M5Canvas *canvas);
   void drawEyelash100(M5Canvas *canvas);
   void overwriteOpenRatio();
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
