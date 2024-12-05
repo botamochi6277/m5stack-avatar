@@ -111,14 +111,12 @@ void computeParamsOfCirclePassingThroughThreePoints(float &r, float &cx,
     r *= -1.0f;
   }
 
-  M5_LOGD("r=%0.2f,cx=%0.2f,cy=%0.2f", r, cx, cy);
+  // M5_LOGD("r=%0.2f,cx=%0.2f,cy=%0.2f", r, cx, cy);
 }
 
-void computeAnglesOfArcPassingThroughThreePoints(float &min_angle,
-                                                 float &max_angle, float x1,
-                                                 float y1, float x2, float y2,
-                                                 float x3, float y3, float cx,
-                                                 float cy) {
+void computeAnglesOfArcPassingThroughThreePoints(
+    float &min_angle, float &max_angle, float &via_angle, float x1, float y1,
+    float x2, float y2, float via_x, float via_y, float cx, float cy) {
   // for draw arc through 3 points
   float angle1 = atan2(y1 - cy, x1 - cx);
   if (angle1 < 0.0f) {
@@ -129,13 +127,14 @@ void computeAnglesOfArcPassingThroughThreePoints(float &min_angle,
   if (angle2 < 0.0f) {
     angle2 = 2.0f * M_PI + angle2;
   }
-  float angle3 = atan2(y3 - cy, x3 - cx);
-  if (angle3 < 0.0f) {
-    angle3 = 2.0f * M_PI + angle3;
+
+  via_angle = atan2(via_y - cy, via_x - cx);
+  if (via_angle < 0.0f) {
+    via_angle = 2.0f * M_PI + via_angle;
   }
 
-  min_angle = std::min(angle1, std::min(angle2, angle3));
-  max_angle = std::max(angle1, std::max(angle2, angle3));
+  min_angle = std::min(angle1, angle2);
+  max_angle = std::max(angle1, angle2);
 }
 
 void drawCircle(M5Canvas *canvas, float x1, float y1, float x2, float y2,
@@ -149,12 +148,12 @@ void drawCircle(M5Canvas *canvas, float x1, float y1, float x2, float y2,
 void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
              float y3, uint8_t thickness, bool clockwise, uint16_t color,
              uint8_t offset) {
-  float r, cx, cy, angle1, angle2;
+  float r, cx, cy, angle1, angle2, via_angle;
 
   computeParamsOfCirclePassingThroughThreePoints(r, cx, cy, x1, y1, x2, y2, x3,
                                                  y3);
-  computeAnglesOfArcPassingThroughThreePoints(angle1, angle2, x1, y1, x2, y2,
-                                              x3, y3, cx, cy);
+  computeAnglesOfArcPassingThroughThreePoints(angle1, angle2, via_angle, x1, y1,
+                                              x2, y2, x3, y3, cx, cy);
 
   if (clockwise) {
     // min(angles) --> max(angles)
@@ -169,24 +168,33 @@ void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
   }
 }
 
-void fillArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
-             float y3, uint8_t thickness, bool clockwise, uint16_t color,
+void fillArc(M5Canvas *canvas, float x1, float y1, float x2, float y2,
+             float via_x, float via_y, uint8_t thickness, uint16_t color,
              uint8_t offset) {
-  float r, cx, cy, angle1, angle2;
+  float r, cx, cy, angle1, angle2, via_angle;
 
-  computeParamsOfCirclePassingThroughThreePoints(r, cx, cy, x1, y1, x2, y2, x3,
-                                                 y3);
-  computeAnglesOfArcPassingThroughThreePoints(angle1, angle2, x1, y1, x2, y2,
-                                              x3, y3, cx, cy);
-  if (clockwise) {
+  computeParamsOfCirclePassingThroughThreePoints(r, cx, cy, x1, y1, x2, y2,
+                                                 via_x, via_y);
+  computeAnglesOfArcPassingThroughThreePoints(angle1, angle2, via_angle, x1, y1,
+                                              x2, y2, via_x, via_y, cx, cy);
+
+  M5_LOGD("1=%0.2f,2=%0.2f,via=%0.2f", angle1, angle2, via_angle);
+  // rad to deg
+  angle1 *= 180.0f / M_PI;
+  angle2 *= 180.0f / M_PI;
+  via_angle *= 180.0f / M_PI;
+  if (via_angle < angle1) {
+    // angle2-->angle1
     canvas->fillArc(cx, cy, r + offset + thickness / 2,
-                    r + offset - thickness / 2, angle1 * 180.0f / M_PI,
-                    angle2 * 180.0f / M_PI, color);
-  } else {
-    // ccw
+                    r + offset - thickness / 2, angle2, angle1, color);
+  } else if (angle1 <= via_angle && via_angle < angle2) {
+    // angle1-->angle2
     canvas->fillArc(cx, cy, r + offset + thickness / 2,
-                    r + offset - thickness / 2, angle2 * 180.0f / M_PI,
-                    angle1 * 180.0f / M_PI, color);
+                    r + offset - thickness / 2, angle1, angle2, color);
+  } else if (angle2 <= via_angle) {
+    // angle2-->angle1
+    canvas->fillArc(cx, cy, r + offset + thickness / 2,
+                    r + offset - thickness / 2, angle2, angle1, color);
   }
 }
 
