@@ -51,7 +51,12 @@ void computeParamsOfCirclePassingThroughThreePoints(float &r, float &cx,
 void computeAnglesOfArcPassingThroughThreePoints(float &min_angle,
                                                  float &max_angle, float x1,
                                                  float y1, float x2, float y2,
-                                                 float x3, float y3);
+                                                 float x3, float y3, float cx,
+                                                 float cy);
+
+void drawCircle(M5Canvas *canvas, float x1, float y1, float x2, float y2,
+                float x3, float y3, uint16_t color);
+
 /**
  * @brief draw arc with three waypoints
  *
@@ -67,7 +72,12 @@ void computeAnglesOfArcPassingThroughThreePoints(float &min_angle,
  * @param color
  */
 void drawArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
-             float y3, uint8_t thickness, bool clockwise, uint16_t color);
+             float y3, uint8_t thickness = 4, bool clockwise = true,
+             uint16_t color = 0xffff, uint8_t offset = 0);
+
+void fillArc(M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3,
+             float y3, uint8_t thickness = 4, bool clockwise = true,
+             uint16_t color = 0xffff, uint8_t offset = 0);
 
 }  // namespace m5avatar
 
