@@ -111,12 +111,15 @@ void ToonEye1::drawEyelid(M5Canvas *canvas) {
 
   uint8_t thickness = 4;
   // eyelid
-  uint16_t eyelid_bottom_y = this->center_y_ - 0.75f * height_ / 2 +
+  uint16_t eyelid_bottom_y = this->center_y_ - 0.65f * height_ / 2 +
                              (1.0f - open_ratio_) * this->height_ * 0.6;
 
   uint16_t eyelid_width = this->width_;
   uint16_t eyelid_height =
-      0.1f * this->height_ * open_ratio_ + 1;  // this heigh must not be 0
+      0.1f * this->height_ * open_ratio_ + 1;  // this height must not be 0
+  if (expression_ == Expression::Happy) {
+    eyelid_height += this->height_ / 8;
+  }
 
   // ## prepare eyelid  base waypoints
   float eyelid_med_x, eyelid_med_y, eyelid_cx, eyelid_cy, eyelid_lat_x,
@@ -156,10 +159,18 @@ void ToonEye1::drawEyelid(M5Canvas *canvas) {
   // draw eyelid
 
   // masking
-  // left: cw, right: ccw
+  uint16_t mask_height = eye_lash_height;
+  uint16_t mask_offset = eye_lash_height/2;
+  if ((eyelid_bottom_y-eye_lash_height)>(center_y_-height_/2))
+  {
+    /* code */
+    mask_height=(center_y_-height_/2);
+    mask_offset=mask_height/2;
+  }
+  
   fillArc(canvas, eyelid_med_x, eyelid_med_y, eyelid_lat_x, eyelid_lat_y,
-          eyelid_cx, eyelid_cy, eye_lash_height, skin_color_,
-          eye_lash_height / 2);
+          eyelid_cx, eyelid_cy, mask_height, skin_color_,
+          mask_offset);
   // arc curve
   fillArc(canvas, eyelid_med_x, eyelid_med_y, eyelid_lat_x, eyelid_lat_y,
           eyelid_cx, eyelid_cy, thickness, eyelid_color);
@@ -228,71 +239,6 @@ void ToonEye1::computeEyelashBaseWaypoints(
   medial_y = bottom_y - grad * (eye_lash_width * 1.05f);
 }
 
-void ToonEye1::drawEyelash100(M5Canvas *canvas) {
-  if (!palette_->contains(DrawingLocation::kEyelash)) {
-    return;
-  }
-  auto eyelash_color = palette_->get(DrawingLocation::kEyelash);
-
-  // y position in eye coordinates
-  float upper_eyelid_y = (-0.8f * (height_ / 2)) * (open_ratio_);
-  float eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1, eyelash_x2, eyelash_y2;
-
-  // TODO: re-define eyelash size according to eye_size
-
-  float rx = static_cast<float>(width_ / 2);
-  float ry = static_cast<float>(height_ / 2);
-  // (x0,y0) is on the ellipse outline
-  eyelash_y0 = upper_eyelid_y;
-  eyelash_x0 = rx * sqrtf(1.0f - powf(eyelash_y0 / (ry + 1e-9f), 2));
-
-  // (x1,y1) is on the ellipse height_
-  eyelash_y1 = upper_eyelid_y - ry * 0.15f;
-  eyelash_x1 = rx * sqrtf(1.0f - powf(eyelash_y1 / (ry + 1e-9f), 2));
-
-  eyelash_y2 = upper_eyelid_y - 0.5f * ry;
-  eyelash_x2 = rx;
-
-  // mirroring
-  if (!is_left_) {
-    eyelash_x0 *= -1.0f;
-    eyelash_x1 *= -1.0f;
-    eyelash_x2 *= -1.0f;
-  }
-
-  // convert position to display coordinates
-
-  eyelash_x0 += iris_x_;
-  eyelash_x1 += iris_x_;
-  eyelash_x2 += iris_x_;
-
-  eyelash_y0 += iris_y_;
-  eyelash_y1 += iris_y_;
-  eyelash_y2 += iris_y_;
-
-  float tilt = 0.0f;
-  float ref_tilt = open_ratio_ * M_PI / 6.0f;
-  float bias;
-  if (expression_ == Expression::Angry) {
-    tilt = this->is_left_ ? -ref_tilt : ref_tilt;
-  } else if (expression_ == Expression::Sad) {
-    tilt = this->is_left_ ? ref_tilt : -ref_tilt;
-  }
-  bias = 0.2f * width_ * tilt / (M_PI / 6.0f);
-  if ((open_ratio_ < 0.99f) || (abs(tilt) > 0.1f)) {
-    eyelash_x0 += bias;
-    eyelash_x1 += bias;
-    eyelash_x2 += bias;
-
-    rotatePointAround(eyelash_x0, eyelash_y0, tilt, iris_x_, upper_eyelid_y);
-    rotatePointAround(eyelash_x1, eyelash_y1, tilt, iris_x_, upper_eyelid_y);
-    rotatePointAround(eyelash_x2, eyelash_y2, tilt, iris_x_, upper_eyelid_y);
-  }
-
-  canvas->fillTriangle(eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1,
-                       eyelash_x2, eyelash_y2, eyelash_color);
-}
-
 void ToonEye1::overwriteOpenRatio() {
   switch (expression_) {
     case Expression::Doubt:
@@ -304,6 +250,9 @@ void ToonEye1::overwriteOpenRatio() {
     case Expression::Sleepy:
       open_ratio_ = 0.0f;
       break;
+    case Expression::Happy:
+      open_ratio_ = 0.0f;  // close strongly
+      break;
   }
 }
 
@@ -314,19 +263,19 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   auto wink_base_y = iris_y_ + (1.0f - open_ratio_) * this->height_ / 4;
 
   uint32_t thickness = 4;
-  if (expression_ == Expression::Happy) {
-    canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
-                        this->width_ / 2, this->height_ / 4 + thickness,
-                        iris_bg_color_);
-    // mask
-    canvas->fillEllipse(iris_x_,
-                        wink_base_y + (1 / 8) * this->height_ + thickness,
-                        this->width_ / 2 - thickness,
-                        this->height_ / 4 + thickness, skin_color_);
-    canvas->fillRect(iris_x_ - this->width_ / 2, wink_base_y + thickness / 2,
-                     this->width_, this->height_ / 4, skin_color_);
-    return;
-  }
+  // if (expression_ == Expression::Happy) {
+  //   canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
+  //                       this->width_ / 2, this->height_ / 4 + thickness,
+  //                       iris_bg_color_);
+  //   // mask
+  //   canvas->fillEllipse(iris_x_,
+  //                       wink_base_y + (1 / 8) * this->height_ + thickness,
+  //                       this->width_ / 2 - thickness,
+  //                       this->height_ / 4 + thickness, skin_color_);
+  //   canvas->fillRect(iris_x_ - this->width_ / 2, wink_base_y + thickness / 2,
+  //                    this->width_, this->height_ / 4, skin_color_);
+  //   return;
+  // }
   // iris
   palette_ = ctx->getColorPalette();
 
@@ -366,12 +315,6 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
     }
   }
   this->drawEyelid(canvas);
-  // if (this->open_ratio_ < 0.99f || this->expression_ != Expression::Neutral)
-  // {
-  //   this->drawEyelid(canvas);  // draw eyelid & eyelash
-  // } else {
-  //   this->drawEyelash100(canvas);  // draw eyelash only
-  // }
 }
 
 void PinkDemonEye::drawEyelid(M5Canvas *canvas) {

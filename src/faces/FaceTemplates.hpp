@@ -45,9 +45,9 @@ class GirlyFace : public Face {
   GirlyFace()
       : Face(new UShapeMouth(44, 44, 0, 16), new BoundingRect(222, 160),
              // right eye, second eye arg is center position of eye
-             new ToonEye1(84, 84, false), new BoundingRect(163, 64),
+             new ToonEye1(60, 84, false), new BoundingRect(163, 64),
              //  left eye
-             new ToonEye1(84, 84, true), new BoundingRect(163, 256),
+             new ToonEye1(60, 84, true), new BoundingRect(163, 256),
 
              // right eyebrow
              new EllipseEyebrow(36, 20, false),
