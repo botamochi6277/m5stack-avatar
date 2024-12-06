@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classm5avatar_1_1_toon_eye1.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classm5avatar_1_1_toon_eye1-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">m5avatar::ToonEye1 Class Reference</div></div>
 </div><!--header-->
@@ -99,7 +100,7 @@ $(document).ready(function(){initNavTree('classm5avatar_1_1_toon_eye1.html','');
 <div class="dynheader">
 Inheritance diagram for m5avatar::ToonEye1:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classm5avatar_1_1_toon_eye1__inherit__graph.svg" width="166" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classm5avatar_1_1_toon_eye1__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
@@ -111,12 +112,15 @@ Collaboration diagram for m5avatar::ToonEye1:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a503b2396684042ede8916b9d62a2bc56"><td class="memItemLeft" align="right" valign="top"><a id="a503b2396684042ede8916b9d62a2bc56" name="a503b2396684042ede8916b9d62a2bc56"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update2</b> (M5Canvas *canvas, <a class="el" href="classm5avatar_1_1_bounding_rect.html">BoundingRect</a> rect, <a class="el" href="classm5avatar_1_1_draw_context.html">DrawContext</a> *ctx)</td></tr>
+<tr class="separator:a503b2396684042ede8916b9d62a2bc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4196abbbaed3c8e9b0e3c709ecf9fb3e"><td class="memItemLeft" align="right" valign="top"><a id="a4196abbbaed3c8e9b0e3c709ecf9fb3e" name="a4196abbbaed3c8e9b0e3c709ecf9fb3e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>drawEyelid</b> (M5Canvas *canvas)</td></tr>
 <tr class="separator:a4196abbbaed3c8e9b0e3c709ecf9fb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328c0d23fcc92f13868d5d61ff1fa393"><td class="memItemLeft" align="right" valign="top"><a id="a328c0d23fcc92f13868d5d61ff1fa393" name="a328c0d23fcc92f13868d5d61ff1fa393"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawEyelash100</b> (M5Canvas *canvas)</td></tr>
-<tr class="separator:a328c0d23fcc92f13868d5d61ff1fa393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ea46f805b65ee55480a393a425253a"><td class="memItemLeft" align="right" valign="top"><a id="a29ea46f805b65ee55480a393a425253a" name="a29ea46f805b65ee55480a393a425253a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>drawEyelash</b> (M5Canvas *canvas)</td></tr>
+<tr class="separator:a29ea46f805b65ee55480a393a425253a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab96545b43748ac3d27074e8b477f310f"><td class="memItemLeft" align="right" valign="top"><a id="ab96545b43748ac3d27074e8b477f310f" name="ab96545b43748ac3d27074e8b477f310f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>overwriteOpenRatio</b> ()</td></tr>
 <tr class="separator:ab96545b43748ac3d27074e8b477f310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +145,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (M5Canvas 
 <tr class="memitem:a9daf13fe9e68394f0a981143e2daa3f8"><td class="memItemLeft" align="right" valign="top"><a id="a9daf13fe9e68394f0a981143e2daa3f8" name="a9daf13fe9e68394f0a981143e2daa3f8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (M5Canvas *spi, <a class="el" href="classm5avatar_1_1_bounding_rect.html">BoundingRect</a> rect, <a class="el" href="classm5avatar_1_1_draw_context.html">DrawContext</a> *drawContext)=0</td></tr>
 <tr class="separator:a9daf13fe9e68394f0a981143e2daa3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa446cca29ad5b9e06dc30bb92f2bce91"><td class="memItemLeft" align="right" valign="top"><a id="aa446cca29ad5b9e06dc30bb92f2bce91" name="aa446cca29ad5b9e06dc30bb92f2bce91"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>computeEyelidBaseWaypoints</b> (float &amp;medial_x, float &amp;medial_y, float &amp;center_x, float &amp;center_y, float &amp;lateral_x, float &amp;lateral_y, uint16_t eyelid_width, uint16_t eyelid_height, uint16_t eyelid_bottom)</td></tr>
+<tr class="separator:aa446cca29ad5b9e06dc30bb92f2bce91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42500717d35c4c7a47b779535c5f34d"><td class="memItemLeft" align="right" valign="top"><a id="aa42500717d35c4c7a47b779535c5f34d" name="aa42500717d35c4c7a47b779535c5f34d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>computeEyelashBaseWaypoints</b> (float &amp;tip_x, float &amp;tip_y, float &amp;bottom_x, float &amp;bottom_y, float &amp;medial_x, float &amp;medial_y, uint16_t eye_lash_width, uint16_t eye_lash_height, uint16_t eyelid_lateral_x, uint16_t eyelid_bottom, uint16_t eyelid_width, uint16_t eyelid_height)</td></tr>
+<tr class="separator:aa42500717d35c4c7a47b779535c5f34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>

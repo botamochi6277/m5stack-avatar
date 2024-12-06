@@ -113,10 +113,30 @@ $(document).ready(function(){initNavTree('_drawing_utils_8hpp_source.html',''); 
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                           <span class="keywordtype">float</span> bottom_right_x, <span class="keywordtype">float</span> bottom_right_y,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                           <span class="keywordtype">float</span> angle, uint16_t cx, uint16_t cy,</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                           uint16_t color);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}  <span class="comment">// namespace m5avatar</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> computeParamsOfCirclePassingThroughThreePoints(<span class="keywordtype">float</span> &amp;r, <span class="keywordtype">float</span> &amp;cx,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                                    <span class="keywordtype">float</span> &amp;cy, <span class="keywordtype">float</span> x1,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                                    <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                                    <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> x3,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                                    <span class="keywordtype">float</span> y3);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> computeAnglesOfArcPassingThroughThreePoints(</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">float</span> &amp;min_angle, <span class="keywordtype">float</span> &amp;max_angle, <span class="keywordtype">float</span> &amp;via_angle, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> via_x, <span class="keywordtype">float</span> via_y, <span class="keywordtype">float</span> cx, <span class="keywordtype">float</span> cy);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> drawCircle(M5Canvas *canvas, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordtype">float</span> x3, <span class="keywordtype">float</span> y3, uint16_t color);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> drawArc(M5Canvas *canvas, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>             <span class="keywordtype">float</span> via_x, <span class="keywordtype">float</span> via_y, uint8_t thickness = 4,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>             uint16_t color = 0xffff, uint8_t offset = 0);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keywordtype">void</span> fillArc(M5Canvas *canvas, <span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>             <span class="keywordtype">float</span> via_x, <span class="keywordtype">float</span> via_y, uint8_t thickness = 4,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>             uint16_t color = 0xffff, uint8_t offset = 0);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}  <span class="comment">// namespace m5avatar</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

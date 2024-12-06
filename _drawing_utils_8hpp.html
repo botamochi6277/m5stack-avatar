@@ -130,6 +130,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::fillRotated
 <tr class="memitem:acd0fc0f53152e1d22f56df1f1cb7d63f"><td class="memItemLeft" align="right" valign="top"><a id="acd0fc0f53152e1d22f56df1f1cb7d63f" name="acd0fc0f53152e1d22f56df1f1cb7d63f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::fillRectRotatedAround</b> (M5Canvas *canvas, float top_left_x, float top_left_y, float bottom_right_x, float bottom_right_y, float angle, uint16_t cx, uint16_t cy, uint16_t color)</td></tr>
 <tr class="separator:acd0fc0f53152e1d22f56df1f1cb7d63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87df77df3175d2415e7cdde2008e6ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_drawing_utils_8cpp.html#aa87df77df3175d2415e7cdde2008e6ba">m5avatar::computeParamsOfCirclePassingThroughThreePoints</a> (float &amp;r, float &amp;cx, float &amp;cy, float x1, float y1, float x2, float y2, float x3, float y3)</td></tr>
+<tr class="memdesc:aa87df77df3175d2415e7cdde2008e6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute circle parameters though 3 points, (x1,y1), (x2,y2), and (x3,y3)  <a href="_drawing_utils_8cpp.html#aa87df77df3175d2415e7cdde2008e6ba">More...</a><br /></td></tr>
+<tr class="separator:aa87df77df3175d2415e7cdde2008e6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2875d202ffda827967458aedfe7f381b"><td class="memItemLeft" align="right" valign="top"><a id="a2875d202ffda827967458aedfe7f381b" name="a2875d202ffda827967458aedfe7f381b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::computeAnglesOfArcPassingThroughThreePoints</b> (float &amp;min_angle, float &amp;max_angle, float &amp;via_angle, float x1, float y1, float x2, float y2, float via_x, float via_y, float cx, float cy)</td></tr>
+<tr class="separator:a2875d202ffda827967458aedfe7f381b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137f0316a764c92ef46177ef5c742cc1"><td class="memItemLeft" align="right" valign="top"><a id="a137f0316a764c92ef46177ef5c742cc1" name="a137f0316a764c92ef46177ef5c742cc1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::drawCircle</b> (M5Canvas *canvas, float x1, float y1, float x2, float y2, float x3, float y3, uint16_t color)</td></tr>
+<tr class="separator:a137f0316a764c92ef46177ef5c742cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae544504cf73e80d910d1227fa25de20e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_drawing_utils_8cpp.html#ae544504cf73e80d910d1227fa25de20e">m5avatar::drawArc</a> (M5Canvas *canvas, float x1, float y1, float x2, float y2, float via_x, float via_y, uint8_t thickness=4, uint16_t color=0xffff, uint8_t offset=0)</td></tr>
+<tr class="memdesc:ae544504cf73e80d910d1227fa25de20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw arc with three waypoints  <a href="_drawing_utils_8cpp.html#ae544504cf73e80d910d1227fa25de20e">More...</a><br /></td></tr>
+<tr class="separator:ae544504cf73e80d910d1227fa25de20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1219ded01a745ff0c5020c4cf09907ef"><td class="memItemLeft" align="right" valign="top"><a id="a1219ded01a745ff0c5020c4cf09907ef" name="a1219ded01a745ff0c5020c4cf09907ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::fillArc</b> (M5Canvas *canvas, float x1, float y1, float x2, float y2, float via_x, float via_y, uint8_t thickness, uint16_t color, uint8_t offset)</td></tr>
+<tr class="separator:a1219ded01a745ff0c5020c4cf09907ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >drawing utils including geometry handling </p>
@@ -137,7 +152,187 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>m5avatar::fillRectRot
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-07-28</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aa87df77df3175d2415e7cdde2008e6ba" name="aa87df77df3175d2415e7cdde2008e6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87df77df3175d2415e7cdde2008e6ba">&#9670;&#160;</a></span>computeParamsOfCirclePassingThroughThreePoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void m5avatar::computeParamsOfCirclePassingThroughThreePoints </td>
+          <td>(</td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute circle parameters though 3 points, (x1,y1), (x2,y2), and (x3,y3) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>radius </td></tr>
+    <tr><td class="paramname">cx</td><td>center of x </td></tr>
+    <tr><td class="paramname">cy</td><td>center of y </td></tr>
+    <tr><td class="paramname">x1</td><td></td></tr>
+    <tr><td class="paramname">y1</td><td></td></tr>
+    <tr><td class="paramname">x2</td><td></td></tr>
+    <tr><td class="paramname">y2</td><td></td></tr>
+    <tr><td class="paramname">x3</td><td></td></tr>
+    <tr><td class="paramname">y3</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae544504cf73e80d910d1227fa25de20e" name="ae544504cf73e80d910d1227fa25de20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae544504cf73e80d910d1227fa25de20e">&#9670;&#160;</a></span>drawArc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void m5avatar::drawArc </td>
+          <td>(</td>
+          <td class="paramtype">M5Canvas *&#160;</td>
+          <td class="paramname"><em>canvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>via_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>via_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>thickness</em> = <code>4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>color</em> = <code>0xffff</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>draw arc with three waypoints </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">x1</td><td></td></tr>
+    <tr><td class="paramname">y1</td><td></td></tr>
+    <tr><td class="paramname">x2</td><td></td></tr>
+    <tr><td class="paramname">y2</td><td></td></tr>
+    <tr><td class="paramname">x3</td><td></td></tr>
+    <tr><td class="paramname">y3</td><td></td></tr>
+    <tr><td class="paramname">thickness</td><td></td></tr>
+    <tr><td class="paramname">clockwise</td><td></td></tr>
+    <tr><td class="paramname">color</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
