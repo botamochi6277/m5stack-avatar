@@ -6,7 +6,20 @@
 #define EXPRESSION_H_
 
 namespace m5avatar {
-enum class Expression { Happy, Angry, Sad, Doubt, Sleepy, Neutral };
-}
+// facial expression keys
+// NOTE what is difference between expression & emotion?
+enum class Expression : uint8_t {
+  kNeutral = 0,
+  kHappy,
+  kAngry,
+  kSad,
+  kDoubt,
+  kSleepy,
+  kSmile,
+  kLaugh,
+  kSurprised,
+  kRelax,
+};
+}  // namespace m5avatar
 
 #endif  // EXPRESSION_H_

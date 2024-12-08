@@ -100,7 +100,7 @@ Avatar::Avatar() : Avatar(new Face()) {}
 Avatar::Avatar(Face *face)
     : face{face},
       _isDrawing{false},
-      expression{Expression::Neutral},
+      expression{Expression::kNeutral},
       breath{0},
       leftEyeOpenRatio_{1.0f},
       leftGazeH_{1.0f},
@@ -278,7 +278,7 @@ void Avatar::getLeftGaze(float *vertical, float *horizontal) {
   *horizontal = this->leftGazeH_;
 }
 
-void Avatar::getGaze(float *vertical, float *horizontal){
+void Avatar::getGaze(float *vertical, float *horizontal) {
   *vertical = 0.5f * this->leftGazeV_ + 0.5f * this->rightGazeV_;
   *horizontal = 0.5f * this->leftGazeH_ + 0.5f * this->rightGazeH_;
 }

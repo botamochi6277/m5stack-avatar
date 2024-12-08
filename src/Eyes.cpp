@@ -36,14 +36,14 @@ void BaseEye::update(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
 void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   this->update(canvas, rect, ctx);
-  if (open_ratio_ == 0 || expression_ == Expression::Sleepy) {
+  if (open_ratio_ == 0 || expression_ == Expression::kSleepy) {
     // eye closed
     // NOTE: the center of closed eye is lower than the center of bbox
     canvas->fillRect(iris_x_ - (this->width_ / 2),
                      iris_y_ - 2 + this->height_ / 4, this->width_, 4,
                      iris_bg_color_);
     return;
-  } else if (expression_ == Expression::Happy) {
+  } else if (expression_ == Expression::kHappy) {
     auto wink_base_y = iris_y_ + this->height_ / 4;
     uint32_t thickness = 4;
     canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
@@ -65,7 +65,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // note: you cannot define variable in switch scope
   int x0, y0, x1, y1, x2, y2;
   switch (expression_) {
-    case Expression::Angry:
+    case Expression::kAngry:
       x0 = iris_x_ - width_ / 2;
       y0 = iris_y_ - height_ / 2;
       x1 = iris_x_ + width_ / 2;
@@ -74,7 +74,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
       y2 = iris_y_ - height_ / 4;
       canvas->fillTriangle(x0, y0, x1, y1, x2, y2, skin_color_);
       break;
-    case Expression::Sad:
+    case Expression::kSad:
       x0 = iris_x_ - width_ / 2;
       y0 = iris_y_ - height_ / 2;
       x1 = iris_x_ + width_ / 2;
@@ -83,7 +83,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
       y2 = iris_y_ - height_ / 4;
       canvas->fillTriangle(x0, y0, x1, y1, x2, y2, skin_color_);
       break;
-    case Expression::Doubt:
+    case Expression::kDoubt:
       // top left
       x0 = iris_x_ - width_ / 2;
       y0 = iris_y_ - height_ / 2;
@@ -93,7 +93,7 @@ void EllipseEye::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
       canvas->fillRect(x0, y0, x1 - x0, y1 - y0, skin_color_);
       break;
-    case Expression::Sleepy:
+    case Expression::kSleepy:
       break;
 
     default:
@@ -117,7 +117,7 @@ void ToonEye1::drawEyelid(M5Canvas *canvas) {
   uint16_t eyelid_width = this->width_;
   uint16_t eyelid_height =
       0.1f * this->height_ * open_ratio_ + 1;  // this height must not be 0
-  if (expression_ == Expression::Happy) {
+  if (expression_ == Expression::kHappy) {
     eyelid_height += this->height_ / 8;
   }
 
@@ -144,9 +144,9 @@ void ToonEye1::drawEyelid(M5Canvas *canvas) {
   float tilt = 0.0f;
   float ref_tilt = open_ratio_ * M_PI / 12.0f;
 
-  if (expression_ == Expression::Angry) {
+  if (expression_ == Expression::kAngry) {
     tilt = this->is_left_ ? -ref_tilt : ref_tilt;
-  } else if (expression_ == Expression::Sad) {
+  } else if (expression_ == Expression::kSad) {
     tilt = this->is_left_ ? ref_tilt : -ref_tilt;
   }
   auto rot_x = eyelid_cx;
@@ -160,17 +160,15 @@ void ToonEye1::drawEyelid(M5Canvas *canvas) {
 
   // masking
   uint16_t mask_height = eye_lash_height;
-  uint16_t mask_offset = eye_lash_height/2;
-  if ((eyelid_bottom_y-eye_lash_height)>(center_y_-height_/2))
-  {
+  uint16_t mask_offset = eye_lash_height / 2;
+  if ((eyelid_bottom_y - eye_lash_height) > (center_y_ - height_ / 2)) {
     /* code */
-    mask_height=(center_y_-height_/2);
-    mask_offset=mask_height/2;
+    mask_height = (center_y_ - height_ / 2);
+    mask_offset = mask_height / 2;
   }
-  
+
   fillArc(canvas, eyelid_med_x, eyelid_med_y, eyelid_lat_x, eyelid_lat_y,
-          eyelid_cx, eyelid_cy, mask_height, skin_color_,
-          mask_offset);
+          eyelid_cx, eyelid_cy, mask_height, skin_color_, mask_offset);
   // arc curve
   fillArc(canvas, eyelid_med_x, eyelid_med_y, eyelid_lat_x, eyelid_lat_y,
           eyelid_cx, eyelid_cy, thickness, eyelid_color);
@@ -241,16 +239,16 @@ void ToonEye1::computeEyelashBaseWaypoints(
 
 void ToonEye1::overwriteOpenRatio() {
   switch (expression_) {
-    case Expression::Doubt:
+    case Expression::kDoubt:
       if (open_ratio_ > 0.6f) {
         open_ratio_ = 0.6f;
       }
       break;
 
-    case Expression::Sleepy:
+    case Expression::kSleepy:
       open_ratio_ = 0.0f;
       break;
-    case Expression::Happy:
+    case Expression::kHappy:
       open_ratio_ = 0.0f;  // close strongly
       break;
   }
@@ -263,7 +261,7 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   auto wink_base_y = iris_y_ + (1.0f - open_ratio_) * this->height_ / 4;
 
   uint32_t thickness = 4;
-  // if (expression_ == Expression::Happy) {
+  // if (expression_ == Expression::kHappy) {
   //   canvas->fillEllipse(iris_x_, wink_base_y + (1 / 8) * this->height_,
   //                       this->width_ / 2, this->height_ / 4 + thickness,
   //                       iris_bg_color_);
@@ -332,9 +330,9 @@ void PinkDemonEye::drawEyelid(M5Canvas *canvas) {
 
   float tilt = 0.0f;
   float ref_tilt = open_ratio_ * M_PI / 6.0f;
-  if (expression_ == Expression::Angry) {
+  if (expression_ == Expression::kAngry) {
     tilt = this->is_left_ ? -ref_tilt : ref_tilt;
-  } else if (expression_ == Expression::Sad) {
+  } else if (expression_ == Expression::kSad) {
     tilt = this->is_left_ ? ref_tilt : -ref_tilt;
   }
 
@@ -370,11 +368,11 @@ void PinkDemonEye::drawEyelid(M5Canvas *canvas) {
 
 void PinkDemonEye::overwriteOpenRatio() {
   switch (expression_) {
-    case Expression::Doubt:
+    case Expression::kDoubt:
       open_ratio_ = 0.6f;
       break;
 
-    case Expression::Sleepy:
+    case Expression::kSleepy:
       open_ratio_ = 0.0f;
       break;
   }

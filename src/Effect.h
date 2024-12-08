@@ -6,6 +6,7 @@
 #define EFFECT_H_
 #define LGFX_USE_V1
 #include <M5GFX.h>
+
 #include "DrawContext.h"
 #include "Drawable.h"
 
@@ -26,12 +27,12 @@ class Effect final : public Drawable {
   }
 
   void drawSweatMark(M5Canvas *spi, uint32_t x, uint32_t y, uint32_t r,
-                 uint16_t color) {
+                     uint16_t color) {
     drawSweatMark(spi, x, y, r, color, 0);
   }
 
   void drawSweatMark(M5Canvas *spi, uint32_t x, uint32_t y, uint32_t r,
-                 uint16_t color, float offset) {
+                     uint16_t color, float offset) {
     y = y + floor(5 * offset);
     r = r + floor(r * 0.2 * offset);
     spi->fillCircle(x, y, r, color);
@@ -68,12 +69,12 @@ class Effect final : public Drawable {
   }
 
   void drawHeartMark(M5Canvas *spi, uint32_t x, uint32_t y, uint32_t r,
-                 uint16_t color) {
+                     uint16_t color) {
     drawHeartMark(spi, x, y, r, color, 0);
   }
 
   void drawHeartMark(M5Canvas *spi, uint32_t x, uint32_t y, uint32_t r,
-                 uint16_t color, float offset) {
+                     uint16_t color, float offset) {
     r = r + floor(r * 0.4 * offset);
     spi->fillCircle(x - r / 2, y, r / 2, color);
     spi->fillCircle(x + r / 2, y, r / 2, color);
@@ -90,24 +91,28 @@ class Effect final : public Drawable {
   Effect(const Effect &other) = default;
   Effect &operator=(const Effect &other) = default;
   void draw(M5Canvas *spi, BoundingRect rect, DrawContext *ctx) override {
-    uint16_t primaryColor = ctx->getColorDepth() == 1 ? 1 : ctx->getColorPalette()->get(COLOR_PRIMARY);
-    uint16_t bgColor = ctx->getColorDepth() == 1 ? ERACER_COLOR : ctx->getColorPalette()->get(COLOR_BACKGROUND);
+    uint16_t primaryColor = ctx->getColorDepth() == 1
+                                ? 1
+                                : ctx->getColorPalette()->get(COLOR_PRIMARY);
+    uint16_t bgColor = ctx->getColorDepth() == 1
+                           ? ERACER_COLOR
+                           : ctx->getColorPalette()->get(COLOR_BACKGROUND);
     float offset = ctx->getBreath();
     Expression exp = ctx->getExpression();
     switch (exp) {
-      case Expression::Doubt:
+      case Expression::kDoubt:
         drawSweatMark(spi, 290, 110, 7, primaryColor, -offset);
         break;
-      case Expression::Angry:
+      case Expression::kAngry:
         drawAngerMark(spi, 280, 50, 12, primaryColor, bgColor, offset);
         break;
-      case Expression::Happy:
+      case Expression::kHappy:
         drawHeartMark(spi, 280, 50, 12, primaryColor, offset);
         break;
-      case Expression::Sad:
+      case Expression::kSad:
         drawChillMark(spi, 270, 0, 30, primaryColor, offset);
         break;
-      case Expression::Sleepy:
+      case Expression::kSleepy:
         drawBubbleMark(spi, 290, 40, 10, primaryColor, offset);
         drawBubbleMark(spi, 270, 52, 6, primaryColor, -offset);
         break;

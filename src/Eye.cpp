@@ -29,23 +29,23 @@ void Eye::draw(M5Canvas *spi, BoundingRect rect, DrawContext *ctx) {
   if (openRatio > 0) {
     spi->fillCircle(x + offsetX, y + offsetY, r, primaryColor);
     // TODO(meganetaaan): Refactor
-    if (exp == Expression::Angry || exp == Expression::Sad) {
+    if (exp == Expression::kAngry || exp == Expression::kSad) {
       int x0, y0, x1, y1, x2, y2;
       x0 = x + offsetX - r;
       y0 = y + offsetY - r;
       x1 = x0 + r * 2;
       y1 = y0;
-      x2 = !isLeft != !(exp == Expression::Sad) ? x0 : x1;
+      x2 = !isLeft != !(exp == Expression::kSad) ? x0 : x1;
       y2 = y0 + r;
       spi->fillTriangle(x0, y0, x1, y1, x2, y2, backgroundColor);
     }
-    if (exp == Expression::Happy || exp == Expression::Sleepy) {
+    if (exp == Expression::kHappy || exp == Expression::kSleepy) {
       int x0, y0, w, h;
       x0 = x + offsetX - r;
       y0 = y + offsetY - r;
       w = r * 2 + 4;
       h = r + 2;
-      if (exp == Expression::Happy) {
+      if (exp == Expression::kHappy) {
         y0 += r;
         spi->fillCircle(x + offsetX, y + offsetY, r / 1.5, backgroundColor);
       }
