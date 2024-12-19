@@ -25,6 +25,7 @@ void BaseMouth::update(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   center_y_ = rect.getCenterY();
   open_ratio_ = ctx->getMouthOpenRatio();
   breath_ = _min(1.0f, ctx->getBreath());
+  expression_ = ctx->getExpression();
 }
 
 void RectMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
@@ -83,18 +84,66 @@ void OmegaMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
 
 void UShapeMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   this->update(canvas, rect, ctx);  // update drawing cache
-  uint32_t h = min_height_ + (max_height_ - min_height_) * open_ratio_;
-  uint32_t w = min_width_ + (max_width_ - min_width_) * (1 - open_ratio_);
+  uint16_t neutral_w = 0.8f * max_width_;
+  uint16_t h = min_height_ + (max_height_ - min_height_) * open_ratio_;
+  uint16_t w = min_width_ + (neutral_w - min_width_) * (1.0f - open_ratio_);
 
-  auto ellipse_center_y = center_y_ - max_height_ / 2;
-  uint16_t thickness = 6;
+  auto lip_baseline_y = center_y_ - min_height_ / 2;
+  float lip_ratio = 0.5f;  // upper_lip_h/lower_lip_height
+  uint16_t thickness = 4;
+  uint16_t upper_lip_y, lower_lip_y;
 
-  // back
-  canvas->fillEllipse(center_x_, ellipse_center_y, max_width_ / 2, max_height_,
-                      background_color_);
-  // rect mask
-  canvas->fillRect(center_x_ - max_width_ / 2, ellipse_center_y - max_height_,
-                   max_width_ + 1, max_height_, skin_color_);
+  // expressions
+  switch (expression_) {
+    case Expression::kHappy:
+    case Expression::kSmile:
+      w = max_width_;
+      upper_lip_y = lip_baseline_y + max_height_;
+      lower_lip_y = lip_baseline_y + max_height_;
+      break;
+    case Expression::kAngry:
+      upper_lip_y = lip_baseline_y - min_height_;
+      lower_lip_y = lip_baseline_y - min_height_;
+      break;
+    case Expression::kDoubt:
+      // overwrite width
+      // NOTE should we prepare extra_min_width?
+      w = min_width_;
+      upper_lip_y = lip_baseline_y - min_height_ / 2;
+      lower_lip_y = lip_baseline_y + min_height_ / 2;
+      break;
+    case Expression::kSad:
+      w = min_width_ + (neutral_w - min_width_) * 0.5f;
+      upper_lip_y = lip_baseline_y - min_height_ / 2;
+      lower_lip_y = lip_baseline_y + min_height_ / (1.0f + lip_ratio);
+      break;
+    default:
+      // neutral
+      // max_width x min_height @0.0 open_ratio
+      // min_width x max_height @1.0 open_ratio
+
+      // upper lib outline
+      upper_lip_y = lip_baseline_y + min_height_;
+      // lower lib outline
+      lower_lip_y = lip_baseline_y + h;
+
+      break;
+  }
+
+  // draw lip outlines
+  fillArc(canvas, center_x_ - w / 2, lip_baseline_y, center_x_ + w / 2,
+          lip_baseline_y, center_x_, upper_lip_y, thickness, background_color_);
+
+  fillArc(canvas, center_x_ - w / 2, lip_baseline_y, center_x_ + w / 2,
+          lip_baseline_y, center_x_, lower_lip_y, thickness, background_color_);
+  // M5_LOGD("lower y %d--%d", upper_lip_y, lower_lip_y);
+
+  // bbox
+  // canvas->drawRect(center_x_ - w / 2, center_y_ - h / 2, w, h, TFT_BLUE);
+
+  // M5_LOGD("x %d--%d", center_x_ - w / 2, center_x_ + w / 2);
+  // M5_LOGD("wh %dx%d", w, h);
+  // fill inner
 
   // ellipse mask
 
@@ -105,10 +154,6 @@ void UShapeMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   //                       (max_height_ - thickness) * (1.0f - open_ratio_),
   //                       inner_color);
   // }
-
-  canvas->fillEllipse(center_x_, ellipse_center_y, max_width_ / 2 - thickness,
-                      (max_height_ - thickness) * (1.0f - open_ratio_),
-                      skin_color_);
 
   // cheek
   if (palette_->contains(DrawingLocation::kCheek1)) {

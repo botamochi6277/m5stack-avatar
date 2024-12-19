@@ -16,6 +16,8 @@
 #include <Drawable.h>
 #include <Face.h>
 
+#include "DrawingUtils.hpp"
+
 namespace m5avatar {
 
 class BaseMouth : public Drawable {

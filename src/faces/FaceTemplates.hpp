@@ -43,7 +43,7 @@ class OmegaFace : public Face {
 class GirlyFace : public Face {
  public:
   GirlyFace()
-      : Face(new UShapeMouth(44, 44, 0, 16), new BoundingRect(222, 160),
+      : Face(new UShapeMouth(24, 44, 8, 16), new BoundingRect(222, 160),
              // right eye, second eye arg is center position of eye
              new ToonEye1(60, 84, false), new BoundingRect(163, 64),
              //  left eye
