@@ -14,13 +14,14 @@ void BaseEyebrow::update(M5Canvas *canvas, BoundingRect rect,
                          DrawContext *ctx) {
   // common process for all standard eyebrows
   // update drawing parameters
-  ColorPalette *cp = ctx->getColorPalette();
-  primary_color_ = ctx->getColorDepth() == 1 ? 1 : cp->get(COLOR_PRIMARY);
+  palette_ = ctx->getColorPalette();
+  primary_color_ = ctx->getColorDepth() == 1 ? 1 : palette_->get(COLOR_PRIMARY);
   secondary_color_ = ctx->getColorDepth() == 1
                          ? 1
                          : ctx->getColorPalette()->get(COLOR_SECONDARY);
-  background_color_ =
-      ctx->getColorDepth() == 1 ? ERACER_COLOR : cp->get(COLOR_BACKGROUND);
+  background_color_ = ctx->getColorDepth() == 1
+                          ? ERACER_COLOR
+                          : palette_->get(COLOR_BACKGROUND);
   center_x_ = rect.getCenterX();
   center_y_ = rect.getCenterY();
   expression_ = ctx->getExpression();
@@ -39,12 +40,19 @@ void EllipseEyebrow::draw(M5Canvas *canvas, BoundingRect rect,
 
 void BowEyebrow::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   this->update(canvas, rect, ctx);
-  uint8_t thickness = 4;
 
-  float angle0 = is_left_ ? 180.0f + 35.0f : 180.0f + 45.0f;
-  float stroke_angle = 100.0f;
-  canvas->fillArc(center_x_, center_y_, width_ / 2, width_ / 2 - thickness,
-                  angle0, angle0 + stroke_angle, primary_color_);
+  if (!palette_->contains(DrawingLocation::kEyeBrow)) {
+    return;
+  }
+
+  auto color = palette_->get(DrawingLocation::kEyeBrow);
+
+  uint8_t thickness = 4;
+  // TODO: Add expression behaviors
+  fillArc(canvas,                                           // canvas
+          center_x_ - width_ / 2, center_y_ + height_ / 2,  // medial
+          center_x_ + width_ / 2, center_y_ + height_ / 2,  // lateral
+          center_x_, center_y_ - height_ / 2, thickness, color);
 }
 
 void RectEyebrow::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
