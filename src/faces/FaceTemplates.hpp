@@ -43,7 +43,7 @@ class OmegaFace : public Face {
 class GirlyFace : public Face {
  public:
   GirlyFace()
-      : Face(new UShapeMouth(24, 44, 8, 16), new BoundingRect(222, 160),
+      : Face(new ToonMouth1(24, 44, 8, 16), new BoundingRect(222, 160),
              // right eye, second eye arg is center position of eye
              new ToonEye1(60, 84, false), new BoundingRect(163, 64),
              //  left eye
@@ -60,7 +60,7 @@ class GirlyFace : public Face {
 class GirlyFace2 : public Face {
  public:
   GirlyFace2()
-      : Face(new UShapeMouth(44, 44, 0, 16), new BoundingRect(222, 160),
+      : Face(new ToonMouth1(44, 44, 0, 16), new BoundingRect(222, 160),
              // right eye, second eye arg is center position of eye
              new ToonEye1(84, 84, false), new BoundingRect(163, 64),
              //  left eye
@@ -73,10 +73,26 @@ class GirlyFace2 : public Face {
              new BowEyebrow(160, 160, true), new BoundingRect(163, 256)) {}
 };
 
+// Face like sigure-nui
+class ToonFace1 : public Face {
+ public:
+  ToonFace1()
+      : Face(new ToonMouth1(24, 44, 8, 16), new BoundingRect(222, 160),
+             // right eye, second eye arg is center position of eye
+             new ToonEye2(60, 84, false), new BoundingRect(163, 64),
+             //  left eye
+             new ToonEye2(60, 84, true), new BoundingRect(163, 256),
+             // right eyebrow
+             new BowEyebrow(64, 10, false),
+             new BoundingRect(50, 64),  // (y,x)
+                                        //  left eyebrow
+             new BowEyebrow(64, 10, true), new BoundingRect(50, 256)) {}
+};
+
 class PinkDemonFace : public Face {
  public:
   PinkDemonFace()
-      : Face(new UShapeMouth(64, 64, 0, 16), new BoundingRect(214, 160),
+      : Face(new ToonMouth1(64, 64, 0, 16), new BoundingRect(214, 160),
              // right eye, second eye arg is center position of eye
              new PinkDemonEye(52, 134, false), new BoundingRect(134, 106),
              //  left eye
