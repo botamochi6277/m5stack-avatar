@@ -27,7 +27,7 @@ bool isShowingQR = false;
 class MyCustomFace : public Face {
  public:
   MyCustomFace()
-      : Face(new UShapeMouth(44, 44, 0, 16), new BoundingRect(222, 160),
+      : Face(new ToonMouth1(44, 44, 0, 16), new BoundingRect(222, 160),
              // right eye, second eye arg is center position of eye
              new EllipseEye(32, 32, false), new BoundingRect(163, 64),
              //  left eye
