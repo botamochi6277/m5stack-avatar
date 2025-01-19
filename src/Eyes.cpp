@@ -258,7 +258,12 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // NOTE https://comic.smiles55.jp/guide/9879/
   this->update(canvas, rect, ctx);
   this->overwriteOpenRatio();
-  auto wink_base_y = iris_y_ + (1.0f - open_ratio_) * this->height_ / 4;
+  // 0.2f is offset for natural eye opening. Usually, eyebrow overlap iris
+  // approx 20 %
+  auto wink_base_y = iris_y_ + (1.0f - open_ratio_ + 0.2f) * this->height_ / 4;
+
+  uint16_t iris_w = width_;
+  uint16_t iris_h = height_;
 
   uint32_t thickness = 4;
   // if (expression_ == Expression::kHappy) {
@@ -280,12 +285,12 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // main eye
   if (open_ratio_ > 0.1f) {
     // iris bg
-    canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2, this->height_ / 2,
+    canvas->fillEllipse(iris_x_, iris_y_, iris_w / 2, iris_h / 2,
                         this->iris_bg_color_);
     if (palette_->contains(DrawingLocation::kIris1)) {
       auto iris_color_1 = palette_->get(DrawingLocation::kIris1);
-      canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 2 - thickness,
-                          this->height_ / 2 - thickness, iris_color_1);
+      canvas->fillEllipse(iris_x_, iris_y_, iris_w / 2 - thickness,
+                          iris_h / 2 - thickness, iris_color_1);
     }
 
     if (palette_->contains(DrawingLocation::kIris2)) {
@@ -299,7 +304,7 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
     // pupil
     if (palette_->contains(DrawingLocation::kPupil)) {
       auto pupil_color = palette_->get(DrawingLocation::kPupil);
-      canvas->fillEllipse(iris_x_, iris_y_, this->width_ / 4, this->height_ / 4,
+      canvas->fillEllipse(iris_x_, iris_y_, iris_w / 4, iris_h / 4,
                           pupil_color);
     }
 
@@ -313,6 +318,146 @@ void ToonEye1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
     }
   }
   this->drawEyelid(canvas);
+}
+
+void ToonEye2::drawEyelid(M5Canvas *canvas) {
+  // rect eyelid
+  auto upper_eyelid_y =
+      iris_y_ - 0.8f * height_ / 2 + (1.0f - open_ratio_) * this->height_ * 0.6;
+
+  float eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1, eyelash_x2, eyelash_y2;
+  eyelash_x0 = this->is_left_ ? iris_x_ + 22 : iris_x_ - 22;
+  eyelash_y0 = upper_eyelid_y - 27;
+  eyelash_x1 = this->is_left_ ? iris_x_ + 26 : iris_x_ - 26;
+  eyelash_y1 = upper_eyelid_y;
+  eyelash_x2 = this->is_left_ ? iris_x_ - 10 : iris_x_ + 10;
+  eyelash_y2 = upper_eyelid_y;
+
+  float tilt = 0.0f;
+  float ref_tilt = open_ratio_ * M_PI / 6.0f;
+  float bias;
+  if (expression_ == Expression::kAngry) {
+    tilt = this->is_left_ ? -ref_tilt : ref_tilt;
+  } else if (expression_ == Expression::kSad) {
+    tilt = this->is_left_ ? ref_tilt : -ref_tilt;
+  }
+  bias = 0.1f * width_ * tilt / (M_PI / 6.0f);
+
+  auto skin_color = palette_->get(DrawingLocation::kSkin);
+
+  if ((open_ratio_ < 0.99f) || (abs(tilt) > 0.1f)) {
+    float mask_top_left_x = iris_x_ - (this->width_ / 2);
+    float mask_top_left_y = iris_y_ - 0.75f * this->height_;
+    float mask_bottom_right_x = iris_x_ + (this->width_ / 2);
+    float mask_bottom_right_y = upper_eyelid_y;
+
+    fillRectRotatedAround(canvas, mask_top_left_x, mask_top_left_y,
+                          mask_bottom_right_x, mask_bottom_right_y, tilt,
+                          iris_x_, upper_eyelid_y, skin_color);
+
+    // eyelid
+    float eyelid_top_left_x = iris_x_ - (this->width_ / 2) + bias;
+    float eyelid_top_left_y = upper_eyelid_y - 4;
+    float eyelid_bottom_right_x = iris_x_ + (this->width_ / 2) + bias;
+    float eyelid_bottom_right_y = upper_eyelid_y;
+
+    if (palette_->contains(DrawingLocation::kEyelid)) {
+      auto eyelid_color = palette_->get(DrawingLocation::kEyelid);
+      fillRectRotatedAround(canvas, eyelid_top_left_x, eyelid_top_left_y,
+                            eyelid_bottom_right_x, eyelid_bottom_right_y, tilt,
+                            iris_x_, upper_eyelid_y, eyelid_color);
+    }
+
+    eyelash_x0 += bias;
+    eyelash_x1 += bias;
+    eyelash_x2 += bias;
+  }
+
+  // eyelash
+  if (palette_->contains(DrawingLocation::kEyelash)) {
+    auto eyelash_color = palette_->get(DrawingLocation::kEyelash);
+    rotatePointAround(eyelash_x0, eyelash_y0, tilt, iris_x_, upper_eyelid_y);
+    rotatePointAround(eyelash_x1, eyelash_y1, tilt, iris_x_, upper_eyelid_y);
+    rotatePointAround(eyelash_x2, eyelash_y2, tilt, iris_x_, upper_eyelid_y);
+    canvas->fillTriangle(eyelash_x0, eyelash_y0, eyelash_x1, eyelash_y1,
+                         eyelash_x2, eyelash_y2, eyelash_color);
+  }
+}
+
+void ToonEye2::overwriteOpenRatio() {
+  switch (expression_) {
+    case Expression::kDoubt:
+      if (open_ratio_ > 0.6f) {
+        open_ratio_ = 0.6f;
+      }
+      break;
+
+    case Expression::kSleepy:
+      open_ratio_ = 0.0f;
+      break;
+    case Expression::kHappy:
+      open_ratio_ = 0.0f;  // close strongly
+      break;
+  }
+}
+
+void ToonEye2::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
+  this->update(canvas, rect, ctx);
+  this->overwriteOpenRatio();
+  auto wink_base_y = iris_y_ + (1.0f - open_ratio_ + 0.2f) * this->height_ / 4;
+
+  uint16_t iris_w = width_;
+  uint16_t iris_h = height_;
+  uint32_t thickness = 2;
+
+  if ((open_ratio_ > 0.9f) && expression_ == Expression::kNeutral) {
+    // draw only eyelash
+    // this->drawEyelid(canvas);
+
+    auto eyelash_color = palette_->get(DrawingLocation::kEyelash);
+    auto eyelash_tip_x = is_left_ ? iris_x_ + iris_w / 2 : iris_x_ - iris_w / 2;
+    auto eyelash_tip_y = iris_y_ - iris_h / 2;
+    auto eyelash_med_x = is_left_ ? iris_x_ : iris_x_;
+    auto eyelash_med_y = iris_y_ - iris_h / 4;
+    auto eyelash_btm_x = is_left_ ? iris_x_ + iris_w / 3 : iris_x_ - iris_w / 3;
+    auto eyelash_btm_y = iris_y_ - iris_h / 4;
+
+    canvas->fillTriangle(eyelash_tip_x, eyelash_tip_y, eyelash_med_x,
+                         eyelash_med_y, eyelash_btm_x, eyelash_btm_y,
+                         eyelash_color);
+  }
+
+  // main eye
+  if (open_ratio_ > 0.1f) {
+    // iris bg
+    canvas->fillEllipse(iris_x_, iris_y_, iris_w / 2, iris_h / 2,
+                        this->iris_bg_color_);
+
+    if (palette_->contains(DrawingLocation::kIris1)) {
+      auto iris_color_1 = palette_->get(DrawingLocation::kIris1);
+      canvas->fillEllipse(iris_x_, iris_y_, iris_w / 2 - thickness,
+                          iris_h / 2 - thickness, iris_color_1);
+    }
+
+    if (palette_->contains(DrawingLocation::kIris2)) {
+      auto iris_color_2 = palette_->get(DrawingLocation::kIris2);
+      // center arc line
+
+      fillArc(canvas,  // canvas
+              iris_x_ - iris_w / 2 + thickness + 2, iris_y_ + iris_h / 4,
+              iris_x_ + iris_w / 2 - thickness - 2, iris_y_ + iris_h / 4,
+              iris_x_ + thickness, iris_y_ + iris_h / 8,
+              1,  // thickness
+              iris_color_2);
+
+      // lower half moon will be filled
+      canvas->floodFill(iris_x_, iris_y_ + iris_h / 8 + 2, iris_color_2);
+    }
+  }
+
+  if ((open_ratio_ <= 0.9f) || (expression_ != Expression::kNeutral)) {
+    this->drawEyelid(canvas);
+  }
 }
 
 void PinkDemonEye::drawEyelid(M5Canvas *canvas) {

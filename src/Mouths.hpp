@@ -57,7 +57,7 @@ class OmegaMouth : public BaseMouth {
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);
 };
 
-class UShapeMouth : public BaseMouth {
+class ToonMouth1 : public BaseMouth {
  public:
   using BaseMouth::BaseMouth;
   void draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx);

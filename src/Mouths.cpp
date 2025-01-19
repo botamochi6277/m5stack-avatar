@@ -82,7 +82,7 @@ void OmegaMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   }
 }
 
-void UShapeMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
+void ToonMouth1::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   this->update(canvas, rect, ctx);  // update drawing cache
   uint16_t neutral_w = 0.8f * max_width_;
   uint16_t h = min_height_ + (max_height_ - min_height_) * open_ratio_;
@@ -141,19 +141,14 @@ void UShapeMouth::draw(M5Canvas *canvas, BoundingRect rect, DrawContext *ctx) {
   // bbox
   // canvas->drawRect(center_x_ - w / 2, center_y_ - h / 2, w, h, TFT_BLUE);
 
-  // M5_LOGD("x %d--%d", center_x_ - w / 2, center_x_ + w / 2);
-  // M5_LOGD("wh %dx%d", w, h);
   // fill inner
-
-  // ellipse mask
-
-  // if (palette_->contains(DrawingLocation::kInnerMouse)) {
-  //   auto inner_color = palette_->get(DrawingLocation::kInnerMouse);
-  //   canvas->fillEllipse(center_x_, ellipse_center_y, max_width_ / 2 -
-  //   thickness,
-  //                       (max_height_ - thickness) * (1.0f - open_ratio_),
-  //                       inner_color);
-  // }
+  if (palette_->contains(DrawingLocation::kInnerMouse)) {
+    if (lower_lip_y - upper_lip_y > thickness + 2) {
+      auto inner_color = palette_->get(DrawingLocation::kInnerMouse);
+      canvas->floodFill(center_x_, 0.5f * upper_lip_y + 0.5f * lower_lip_y,
+                        inner_color);
+    }
+  }
 
   // cheek
   if (palette_->contains(DrawingLocation::kCheek1)) {
