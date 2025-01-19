@@ -40,6 +40,8 @@ var annotated_dup =
       [ "RectMouth", "classm5avatar_1_1_rect_mouth.html", null ],
       [ "SimpleFace", "classm5avatar_1_1_simple_face.html", null ],
       [ "ToonEye1", "classm5avatar_1_1_toon_eye1.html", null ],
-      [ "UShapeMouth", "classm5avatar_1_1_u_shape_mouth.html", null ]
+      [ "ToonEye2", "classm5avatar_1_1_toon_eye2.html", null ],
+      [ "ToonFace1", "classm5avatar_1_1_toon_face1.html", null ],
+      [ "ToonMouth1", "classm5avatar_1_1_toon_mouth1.html", null ]
     ] ]
 ];

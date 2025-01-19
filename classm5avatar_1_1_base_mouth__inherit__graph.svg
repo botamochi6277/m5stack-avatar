@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 544;
+var viewWidth = 536;
 var viewHeight = 390;
 var sectionId = 'dynsection-0';
 </script>
@@ -139,21 +139,21 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classm5avatar_1_1_u_shape_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="536,-63 409,-63 409,0 536,0 536,-63"/>
-<text text-anchor="middle" x="472.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::UShapeMouth</text>
+<g id="a_node6"><a xlink:href="classm5avatar_1_1_toon_mouth1.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="528,-63 409,-63 409,0 528,0 528,-63"/>
+<text text-anchor="middle" x="468.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::ToonMouth1</text>
 <text text-anchor="start" x="417" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
 <text text-anchor="start" x="417" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
 <text text-anchor="start" x="417" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="middle" x="472.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<text text-anchor="middle" x="468.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M332.63,-143.17C365.84,-116.9 404.93,-85.96 433.33,-63.49"/>
-<polygon fill="none" stroke="#63b8ff" points="330.74,-140.21 325.07,-149.16 335.08,-145.7 330.74,-140.21"/>
+<path fill="none" stroke="#63b8ff" d="M332.79,-142.01C365.08,-115.96 402.74,-85.56 430.19,-63.41"/>
+<polygon fill="none" stroke="#63b8ff" points="330.61,-139.27 325.02,-148.28 335,-144.72 330.61,-139.27"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">

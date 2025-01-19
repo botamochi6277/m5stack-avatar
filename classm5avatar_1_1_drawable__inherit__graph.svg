@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1915;
+var viewWidth = 2102;
 var viewHeight = 467;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,11 +58,11 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="1285,-459 1180,-459 1180,-407 1285,-407 1285,-459"/>
-<text text-anchor="middle" x="1232.5" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Drawable</text>
-<text text-anchor="start" x="1188" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">||+ ~Drawable()</text>
-<text text-anchor="start" x="1188" y="-425" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1232.5" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<polygon fill="#999999" stroke="#666666" points="1472,-459 1367,-459 1367,-407 1472,-407 1472,-459"/>
+<text text-anchor="middle" x="1419.5" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Drawable</text>
+<text text-anchor="start" x="1375" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">||+ ~Drawable()</text>
+<text text-anchor="start" x="1375" y="-425" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1419.5" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
@@ -70,273 +70,274 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="classm5avatar_1_1_b_m_p_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="300.5,-283 198.5,-283 198.5,-253 300.5,-253 300.5,-283"/>
-<text text-anchor="middle" x="249.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BMPEye</text>
-<text text-anchor="middle" x="249.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">||}</text>
+<polygon fill="white" stroke="#bfbfbf" points="393.5,-283 291.5,-283 291.5,-253 393.5,-253 393.5,-283"/>
+<text text-anchor="middle" x="342.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BMPEye</text>
+<text text-anchor="middle" x="342.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">||}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M1168.28,-431.2C970.92,-428.26 382.17,-415.81 309.5,-371 276.97,-350.94 260.04,-306.19 253.21,-283.21"/>
-<polygon fill="none" stroke="#63b8ff" points="1168.04,-434.7 1178.09,-431.34 1168.14,-427.7 1168.04,-434.7"/>
+<path fill="none" stroke="#63b8ff" d="M1355.29,-431.62C1144.65,-429.91 483.51,-420.61 402.5,-371 369.91,-351.04 353,-306.24 346.2,-283.23"/>
+<polygon fill="none" stroke="#63b8ff" points="1355.21,-435.12 1365.23,-431.7 1355.26,-428.12 1355.21,-435.12"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classm5avatar_1_1_balloon.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="416,-310.5 319,-310.5 319,-225.5 416,-225.5 416,-310.5"/>
-<text text-anchor="middle" x="367.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Balloon</text>
-<text text-anchor="start" x="327" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Balloon()</text>
-<text text-anchor="start" x="327" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Balloon()</text>
-<text text-anchor="start" x="327" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Balloon()</text>
-<text text-anchor="start" x="327" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="327" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="367.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<polygon fill="white" stroke="#bfbfbf" points="509,-310.5 412,-310.5 412,-225.5 509,-225.5 509,-310.5"/>
+<text text-anchor="middle" x="460.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Balloon</text>
+<text text-anchor="start" x="420" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Balloon()</text>
+<text text-anchor="start" x="420" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Balloon()</text>
+<text text-anchor="start" x="420" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Balloon()</text>
+<text text-anchor="start" x="420" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="420" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="460.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M1168.1,-430.61C987.72,-426.24 486.57,-410.63 424.5,-371 403.04,-357.3 388.92,-332.52 380.11,-310.81"/>
-<polygon fill="none" stroke="#63b8ff" points="1167.92,-434.11 1178,-430.85 1168.09,-427.11 1167.92,-434.11"/>
+<path fill="none" stroke="#63b8ff" d="M1355.07,-431.16C1160.48,-428.13 587.8,-415.5 517.5,-371 495.99,-357.38 481.87,-332.6 473.07,-310.88"/>
+<polygon fill="none" stroke="#63b8ff" points="1354.95,-434.66 1365,-431.31 1355.06,-427.66 1354.95,-434.66"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="classm5avatar_1_1_base_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="537,-371 434,-371 434,-165 537,-165 537,-371"/>
-<text text-anchor="middle" x="485.5" y="-359" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEye</text>
-<text text-anchor="start" x="442" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
-<text text-anchor="start" x="442" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
-<text text-anchor="start" x="442" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
-<text text-anchor="start" x="442" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
-<text text-anchor="start" x="442" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
-<text text-anchor="start" x="442" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
-<text text-anchor="start" x="442" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00"># gaze_</text>
-<text text-anchor="start" x="442" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_bg_color_</text>
-<text text-anchor="start" x="442" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
-<text text-anchor="start" x="442" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_x_</text>
-<text text-anchor="start" x="442" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_y_</text>
-<text text-anchor="start" x="442" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
-<text text-anchor="start" x="442" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
-<text text-anchor="start" x="442" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEye()</text>
-<text text-anchor="start" x="442" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
-<text text-anchor="start" x="442" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
-<text text-anchor="middle" x="485.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<polygon fill="white" stroke="#bfbfbf" points="630,-371 527,-371 527,-165 630,-165 630,-371"/>
+<text text-anchor="middle" x="578.5" y="-359" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEye</text>
+<text text-anchor="start" x="535" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
+<text text-anchor="start" x="535" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
+<text text-anchor="start" x="535" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
+<text text-anchor="start" x="535" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
+<text text-anchor="start" x="535" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
+<text text-anchor="start" x="535" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
+<text text-anchor="start" x="535" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00"># gaze_</text>
+<text text-anchor="start" x="535" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_bg_color_</text>
+<text text-anchor="start" x="535" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
+<text text-anchor="start" x="535" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_x_</text>
+<text text-anchor="start" x="535" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_y_</text>
+<text text-anchor="start" x="535" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
+<text text-anchor="start" x="535" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
+<text text-anchor="start" x="535" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEye()</text>
+<text text-anchor="start" x="535" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="535" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
+<text text-anchor="middle" x="578.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M1168.4,-428.48C1076.33,-422.36 901.82,-406.82 757.5,-371 678.57,-351.41 591.16,-316.03 537.26,-292.53"/>
-<polygon fill="none" stroke="#63b8ff" points="1168.04,-431.96 1178.25,-429.11 1168.49,-424.98 1168.04,-431.96"/>
+<path fill="none" stroke="#63b8ff" d="M1355.42,-426.73C1263.72,-418.51 1090.05,-400.47 944.5,-371 830.88,-348 700.76,-308.5 630.35,-286"/>
+<polygon fill="none" stroke="#63b8ff" points="1354.95,-430.2 1365.22,-427.59 1355.57,-423.22 1354.95,-430.2"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="classm5avatar_1_1_base_eyebrow.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="890.5,-349 766.5,-349 766.5,-187 890.5,-187 890.5,-349"/>
-<text text-anchor="middle" x="828.5" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEyebrow</text>
-<text text-anchor="start" x="774.5" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
-<text text-anchor="start" x="774.5" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
-<text text-anchor="start" x="774.5" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
-<text text-anchor="start" x="774.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00"># primary_color_</text>
-<text text-anchor="start" x="774.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00"># secondary_color_</text>
-<text text-anchor="start" x="774.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00"># background_color_</text>
-<text text-anchor="start" x="774.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
-<text text-anchor="start" x="774.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
-<text text-anchor="start" x="774.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
-<text text-anchor="start" x="774.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEyebrow()</text>
-<text text-anchor="start" x="774.5" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="start" x="774.5" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
-<text text-anchor="middle" x="828.5" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="classm5avatar_1_1_base_eyebrow.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1077.5,-354.5 953.5,-354.5 953.5,-181.5 1077.5,-181.5 1077.5,-354.5"/>
+<text text-anchor="middle" x="1015.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEyebrow</text>
+<text text-anchor="start" x="961.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
+<text text-anchor="start" x="961.5" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
+<text text-anchor="start" x="961.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
+<text text-anchor="start" x="961.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
+<text text-anchor="start" x="961.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00"># primary_color_</text>
+<text text-anchor="start" x="961.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00"># secondary_color_</text>
+<text text-anchor="start" x="961.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00"># background_color_</text>
+<text text-anchor="start" x="961.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
+<text text-anchor="start" x="961.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
+<text text-anchor="start" x="961.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
+<text text-anchor="start" x="961.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEyebrow()</text>
+<text text-anchor="start" x="961.5" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="start" x="961.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
+<text text-anchor="middle" x="1015.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="#63b8ff" d="M1168.38,-423.99C1114.35,-415.62 1035.94,-399.59 972.5,-371 943.87,-358.1 915.08,-339.18 890.85,-321.12"/>
-<polygon fill="none" stroke="#63b8ff" points="1167.62,-427.42 1178.03,-425.44 1168.66,-420.5 1167.62,-427.42"/>
+<!-- Node1&#45;&gt;Node10 -->
+<g id="edge9" class="edge">
+<title>Node1&#45;&gt;Node10</title>
+<path fill="none" stroke="#63b8ff" d="M1355.38,-423.99C1301.35,-415.62 1222.94,-399.59 1159.5,-371 1130.87,-358.1 1102.08,-339.18 1077.85,-321.12"/>
+<polygon fill="none" stroke="#63b8ff" points="1354.62,-427.42 1365.03,-425.44 1355.66,-420.5 1354.62,-427.42"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="classm5avatar_1_1_base_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1095.5,-365.5 981.5,-365.5 981.5,-170.5 1095.5,-170.5 1095.5,-365.5"/>
-<text text-anchor="middle" x="1038.5" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseMouth</text>
-<text text-anchor="start" x="989.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">|# min_width_</text>
-<text text-anchor="start" x="989.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00"># max_width_</text>
-<text text-anchor="start" x="989.5" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00"># min_height_</text>
-<text text-anchor="start" x="989.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00"># max_height_</text>
-<text text-anchor="start" x="989.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
-<text text-anchor="start" x="989.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
-<text text-anchor="start" x="989.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
-<text text-anchor="start" x="989.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00"># background_color_</text>
-<text text-anchor="start" x="989.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
-<text text-anchor="start" x="989.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
-<text text-anchor="start" x="989.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00"># breath_</text>
-<text text-anchor="start" x="989.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
-<text text-anchor="start" x="989.5" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseMouth()</text>
-<text text-anchor="start" x="989.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="start" x="989.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
-<text text-anchor="middle" x="1038.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="classm5avatar_1_1_base_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1282.5,-365.5 1168.5,-365.5 1168.5,-170.5 1282.5,-170.5 1282.5,-365.5"/>
+<text text-anchor="middle" x="1225.5" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseMouth</text>
+<text text-anchor="start" x="1176.5" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">|# min_width_</text>
+<text text-anchor="start" x="1176.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00"># max_width_</text>
+<text text-anchor="start" x="1176.5" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00"># min_height_</text>
+<text text-anchor="start" x="1176.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00"># max_height_</text>
+<text text-anchor="start" x="1176.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
+<text text-anchor="start" x="1176.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
+<text text-anchor="start" x="1176.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
+<text text-anchor="start" x="1176.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00"># background_color_</text>
+<text text-anchor="start" x="1176.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
+<text text-anchor="start" x="1176.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
+<text text-anchor="start" x="1176.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00"># breath_</text>
+<text text-anchor="start" x="1176.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
+<text text-anchor="start" x="1176.5" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseMouth()</text>
+<text text-anchor="start" x="1176.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="start" x="1176.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
+<text text-anchor="middle" x="1225.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node13 -->
-<g id="edge12" class="edge">
-<title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="#63b8ff" d="M1169.38,-410.16C1147.25,-400.47 1123.26,-387.48 1104.5,-371 1101.49,-368.36 1098.56,-365.54 1095.72,-362.6"/>
-<polygon fill="none" stroke="#63b8ff" points="1167.76,-413.27 1178.33,-413.93 1170.47,-406.82 1167.76,-413.27"/>
-</g>
-<!-- Node18 -->
-<g id="node18" class="node">
-<title>Node18</title>
-<g id="a_node18"><a xlink:href="classm5avatar_1_1_battery_icon.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1227.5,-310.5 1113.5,-310.5 1113.5,-225.5 1227.5,-225.5 1227.5,-310.5"/>
-<text text-anchor="middle" x="1170.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BatteryIcon</text>
-<text text-anchor="start" x="1121.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ BatteryIcon()</text>
-<text text-anchor="start" x="1121.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~BatteryIcon()</text>
-<text text-anchor="start" x="1121.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BatteryIcon()</text>
-<text text-anchor="start" x="1121.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="1121.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1170.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node18 -->
-<g id="edge17" class="edge">
-<title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="#63b8ff" d="M1218.79,-395.97C1209.22,-370.79 1196.41,-337.11 1186.39,-310.76"/>
-<polygon fill="none" stroke="#63b8ff" points="1215.45,-397.01 1222.27,-405.12 1221.99,-394.53 1215.45,-397.01"/>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge13" class="edge">
+<title>Node1&#45;&gt;Node14</title>
+<path fill="none" stroke="#63b8ff" d="M1356.38,-410.16C1334.25,-400.47 1310.26,-387.48 1291.5,-371 1288.49,-368.36 1285.56,-365.54 1282.72,-362.6"/>
+<polygon fill="none" stroke="#63b8ff" points="1354.76,-413.27 1365.33,-413.93 1357.47,-406.82 1354.76,-413.27"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="classm5avatar_1_1_dog_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1343.5,-283 1245.5,-283 1245.5,-253 1343.5,-253 1343.5,-283"/>
-<text text-anchor="middle" x="1294.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DogEye</text>
-<text text-anchor="middle" x="1294.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">||}</text>
+<g id="a_node19"><a xlink:href="classm5avatar_1_1_battery_icon.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1414.5,-310.5 1300.5,-310.5 1300.5,-225.5 1414.5,-225.5 1414.5,-310.5"/>
+<text text-anchor="middle" x="1357.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BatteryIcon</text>
+<text text-anchor="start" x="1308.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ BatteryIcon()</text>
+<text text-anchor="start" x="1308.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~BatteryIcon()</text>
+<text text-anchor="start" x="1308.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BatteryIcon()</text>
+<text text-anchor="start" x="1308.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="1308.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1357.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="#63b8ff" d="M1246.15,-396.12C1259.65,-360.63 1279.61,-308.14 1289.11,-283.18"/>
-<polygon fill="none" stroke="#63b8ff" points="1243.01,-394.53 1242.73,-405.12 1249.55,-397.01 1243.01,-394.53"/>
+<path fill="none" stroke="#63b8ff" d="M1405.79,-395.97C1396.22,-370.79 1383.41,-337.11 1373.39,-310.76"/>
+<polygon fill="none" stroke="#63b8ff" points="1402.45,-397.01 1409.27,-405.12 1408.99,-394.53 1402.45,-397.01"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="classm5avatar_1_1_dog_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1471,-299.5 1362,-299.5 1362,-236.5 1471,-236.5 1471,-299.5"/>
-<text text-anchor="middle" x="1416.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DogMouth</text>
-<text text-anchor="start" x="1370" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ DogMouth()</text>
-<text text-anchor="start" x="1370" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DogMouth()</text>
-<text text-anchor="start" x="1370" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1416.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node20"><a xlink:href="classm5avatar_1_1_dog_eye.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1530.5,-283 1432.5,-283 1432.5,-253 1530.5,-253 1530.5,-283"/>
+<text text-anchor="middle" x="1481.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DogEye</text>
+<text text-anchor="middle" x="1481.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">||}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge">
 <title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="#63b8ff" d="M1295.78,-407.72C1315.39,-398.22 1336.12,-385.97 1352.5,-371 1374.41,-350.98 1391.71,-321.78 1402.77,-299.75"/>
-<polygon fill="none" stroke="#63b8ff" points="1294.31,-404.54 1286.72,-411.93 1297.27,-410.89 1294.31,-404.54"/>
+<path fill="none" stroke="#63b8ff" d="M1433.15,-396.12C1446.65,-360.63 1466.61,-308.14 1476.11,-283.18"/>
+<polygon fill="none" stroke="#63b8ff" points="1430.01,-394.53 1429.73,-405.12 1436.55,-397.01 1430.01,-394.53"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="classm5avatar_1_1_effect.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1578,-310.5 1489,-310.5 1489,-225.5 1578,-225.5 1578,-310.5"/>
-<text text-anchor="middle" x="1533.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Effect</text>
-<text text-anchor="start" x="1497" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Effect()</text>
-<text text-anchor="start" x="1497" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Effect()</text>
-<text text-anchor="start" x="1497" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Effect()</text>
-<text text-anchor="start" x="1497" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="1497" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1533.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node21"><a xlink:href="classm5avatar_1_1_dog_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1658,-299.5 1549,-299.5 1549,-236.5 1658,-236.5 1658,-299.5"/>
+<text text-anchor="middle" x="1603.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DogMouth</text>
+<text text-anchor="start" x="1557" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ DogMouth()</text>
+<text text-anchor="start" x="1557" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DogMouth()</text>
+<text text-anchor="start" x="1557" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1603.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge">
 <title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="#63b8ff" d="M1296.62,-430.54C1350.8,-426.22 1427.79,-412.45 1480.5,-371 1499.72,-355.89 1512.68,-331.88 1520.97,-310.96"/>
-<polygon fill="none" stroke="#63b8ff" points="1296.66,-427.03 1286.93,-431.22 1297.15,-434.01 1296.66,-427.03"/>
+<path fill="none" stroke="#63b8ff" d="M1482.78,-407.72C1502.39,-398.22 1523.12,-385.97 1539.5,-371 1561.41,-350.98 1578.71,-321.78 1589.77,-299.75"/>
+<polygon fill="none" stroke="#63b8ff" points="1481.31,-404.54 1473.72,-411.93 1484.27,-410.89 1481.31,-404.54"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="classm5avatar_1_1_eye.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1676.5,-321.5 1596.5,-321.5 1596.5,-214.5 1676.5,-214.5 1676.5,-321.5"/>
-<text text-anchor="middle" x="1636.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Eye</text>
-<text text-anchor="start" x="1604.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Eye()</text>
-<text text-anchor="start" x="1604.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
-<text text-anchor="start" x="1604.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
-<text text-anchor="start" x="1604.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Eye()</text>
-<text text-anchor="start" x="1604.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
-<text text-anchor="start" x="1604.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="1604.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1636.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node22"><a xlink:href="classm5avatar_1_1_effect.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1765,-310.5 1676,-310.5 1676,-225.5 1765,-225.5 1765,-310.5"/>
+<text text-anchor="middle" x="1720.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Effect</text>
+<text text-anchor="start" x="1684" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Effect()</text>
+<text text-anchor="start" x="1684" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Effect()</text>
+<text text-anchor="start" x="1684" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Effect()</text>
+<text text-anchor="start" x="1684" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="1684" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1720.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
 <title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="#63b8ff" d="M1296.82,-427.96C1386.39,-421.18 1542.73,-404.79 1587.5,-371 1603.57,-358.87 1614.63,-340.1 1622.11,-321.95"/>
-<polygon fill="none" stroke="#63b8ff" points="1296.67,-424.46 1286.96,-428.69 1297.19,-431.44 1296.67,-424.46"/>
+<path fill="none" stroke="#63b8ff" d="M1483.62,-430.54C1537.8,-426.22 1614.79,-412.45 1667.5,-371 1686.72,-355.89 1699.68,-331.88 1707.97,-310.96"/>
+<polygon fill="none" stroke="#63b8ff" points="1483.66,-427.03 1473.93,-431.22 1484.15,-434.01 1483.66,-427.03"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="classm5avatar_1_1_eyeblow.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1796,-316 1695,-316 1695,-220 1796,-220 1796,-316"/>
-<text text-anchor="middle" x="1745.5" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Eyeblow</text>
-<text text-anchor="start" x="1703" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Eyeblow()</text>
-<text text-anchor="start" x="1703" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eyeblow()</text>
-<text text-anchor="start" x="1703" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Eyeblow()</text>
-<text text-anchor="start" x="1703" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eyeblow()</text>
-<text text-anchor="start" x="1703" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="1703" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1745.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node23"><a xlink:href="classm5avatar_1_1_eye.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1863.5,-321.5 1783.5,-321.5 1783.5,-214.5 1863.5,-214.5 1863.5,-321.5"/>
+<text text-anchor="middle" x="1823.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Eye</text>
+<text text-anchor="start" x="1791.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Eye()</text>
+<text text-anchor="start" x="1791.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
+<text text-anchor="start" x="1791.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
+<text text-anchor="start" x="1791.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Eye()</text>
+<text text-anchor="start" x="1791.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eye()</text>
+<text text-anchor="start" x="1791.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="1791.5" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1823.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge22" class="edge">
 <title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="#63b8ff" d="M1296.41,-430.18C1405.76,-425.98 1623.02,-412.51 1685.5,-371 1705.01,-358.04 1719.04,-336.39 1728.6,-316.37"/>
-<polygon fill="none" stroke="#63b8ff" points="1296.59,-426.68 1286.73,-430.54 1296.85,-433.67 1296.59,-426.68"/>
+<path fill="none" stroke="#63b8ff" d="M1483.82,-427.96C1573.39,-421.18 1729.73,-404.79 1774.5,-371 1790.57,-358.87 1801.63,-340.1 1809.11,-321.95"/>
+<polygon fill="none" stroke="#63b8ff" points="1483.67,-424.46 1473.96,-428.69 1484.19,-431.44 1483.67,-424.46"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="classm5avatar_1_1_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1906.5,-316 1814.5,-316 1814.5,-220 1906.5,-220 1906.5,-316"/>
-<text text-anchor="middle" x="1860.5" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Mouth</text>
-<text text-anchor="start" x="1822.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Mouth()</text>
-<text text-anchor="start" x="1822.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Mouth()</text>
-<text text-anchor="start" x="1822.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">+ Mouth()</text>
-<text text-anchor="start" x="1822.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="1822.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">+ Mouth()</text>
-<text text-anchor="start" x="1822.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="1860.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node24"><a xlink:href="classm5avatar_1_1_eyeblow.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1983,-316 1882,-316 1882,-220 1983,-220 1983,-316"/>
+<text text-anchor="middle" x="1932.5" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Eyeblow</text>
+<text text-anchor="start" x="1890" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Eyeblow()</text>
+<text text-anchor="start" x="1890" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eyeblow()</text>
+<text text-anchor="start" x="1890" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Eyeblow()</text>
+<text text-anchor="start" x="1890" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">+ Eyeblow()</text>
+<text text-anchor="start" x="1890" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="1890" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="1932.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
 <g id="edge23" class="edge">
 <title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="#63b8ff" d="M1296.63,-432.52C1428.31,-432.44 1723.66,-425.93 1805.5,-371 1824.63,-358.16 1837.65,-336.4 1846.2,-316.27"/>
-<polygon fill="none" stroke="#63b8ff" points="1296.69,-429.02 1286.68,-432.52 1296.68,-436.02 1296.69,-429.02"/>
+<path fill="none" stroke="#63b8ff" d="M1483.41,-430.18C1592.76,-425.98 1810.02,-412.51 1872.5,-371 1892.01,-358.04 1906.04,-336.39 1915.6,-316.37"/>
+<polygon fill="none" stroke="#63b8ff" points="1483.59,-426.68 1473.73,-430.54 1483.85,-433.67 1483.59,-426.68"/>
+</g>
+<!-- Node25 -->
+<g id="node25" class="node">
+<title>Node25</title>
+<g id="a_node25"><a xlink:href="classm5avatar_1_1_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="2093.5,-316 2001.5,-316 2001.5,-220 2093.5,-220 2093.5,-316"/>
+<text text-anchor="middle" x="2047.5" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Mouth</text>
+<text text-anchor="start" x="2009.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">||+ Mouth()</text>
+<text text-anchor="start" x="2009.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Mouth()</text>
+<text text-anchor="start" x="2009.5" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">+ Mouth()</text>
+<text text-anchor="start" x="2009.5" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="2009.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">+ Mouth()</text>
+<text text-anchor="start" x="2009.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="2047.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node25 -->
+<g id="edge24" class="edge">
+<title>Node1&#45;&gt;Node25</title>
+<path fill="none" stroke="#63b8ff" d="M1483.63,-432.52C1615.31,-432.44 1910.66,-425.93 1992.5,-371 2011.63,-358.16 2024.65,-336.4 2033.2,-316.27"/>
+<polygon fill="none" stroke="#63b8ff" points="1483.69,-429.02 1473.68,-432.52 1483.68,-436.02 1483.69,-429.02"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -354,8 +355,8 @@ var sectionId = 'dynsection-0';
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M424.81,-165.2C424.71,-165.13 424.6,-165.07 424.5,-165 308.39,-89.94 239.59,-189.97 115.5,-129 100.15,-121.46 86.46,-108.52 75.87,-96.28"/>
-<polygon fill="none" stroke="#63b8ff" points="422.62,-167.94 432.71,-171.16 426.84,-162.35 422.62,-167.94"/>
+<path fill="none" stroke="#63b8ff" d="M516.71,-165.59C361.93,-75.13 274.22,-204.37 115.5,-129 100.05,-121.66 86.34,-108.75 75.77,-96.48"/>
+<polygon fill="none" stroke="#63b8ff" points="514.86,-168.56 525.23,-170.77 518.51,-162.58 514.86,-168.56"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -373,8 +374,8 @@ var sectionId = 'dynsection-0';
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M424.8,-165.21C424.7,-165.14 424.6,-165.07 424.5,-165 357.08,-117.52 315.16,-167.97 242.5,-129 227.58,-121 213.95,-108.3 203.21,-96.35"/>
-<polygon fill="none" stroke="#63b8ff" points="422.55,-167.89 432.52,-171.45 426.95,-162.45 422.55,-167.89"/>
+<path fill="none" stroke="#63b8ff" d="M517.81,-165.2C517.7,-165.13 517.6,-165.07 517.5,-165 414.46,-97.35 352.97,-183.7 242.5,-129 227.05,-121.35 213.16,-108.4 202.37,-96.18"/>
+<polygon fill="none" stroke="#63b8ff" points="515.61,-167.93 525.68,-171.22 519.86,-162.37 515.61,-167.93"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -394,8 +395,8 @@ var sectionId = 'dynsection-0';
 <!-- Node4&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node4&#45;&gt;Node7</title>
-<path fill="none" stroke="#63b8ff" d="M426.83,-167.92C426.05,-166.94 425.28,-165.96 424.5,-165 407.9,-144.49 387.13,-124.23 368.32,-107.39"/>
-<polygon fill="none" stroke="#63b8ff" points="423.95,-169.92 432.77,-175.8 429.54,-165.71 423.95,-169.92"/>
+<path fill="none" stroke="#63b8ff" d="M518.42,-165.71C518.11,-165.47 517.81,-165.24 517.5,-165 471.31,-129.52 442.78,-156.6 391.5,-129 380.62,-123.14 369.92,-115.46 360.2,-107.48"/>
+<polygon fill="none" stroke="#63b8ff" points="515.95,-168.2 525.77,-172.18 520.57,-162.95 515.95,-168.2"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
@@ -419,141 +420,166 @@ var sectionId = 'dynsection-0';
 <!-- Node4&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node4&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M485.5,-153.48C485.5,-145.23 485.5,-137.1 485.5,-129.31"/>
-<polygon fill="none" stroke="#63b8ff" points="482,-153.26 485.5,-163.26 489,-153.26 482,-153.26"/>
+<path fill="none" stroke="#63b8ff" d="M526.5,-154.32C522.56,-145.79 518.67,-137.37 514.95,-129.31"/>
+<polygon fill="none" stroke="#63b8ff" points="523.32,-155.79 530.68,-163.4 529.67,-152.85 523.32,-155.79"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="classm5avatar_1_1_bow_eyebrow.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="709,-96 588,-96 588,-33 709,-33 709,-96"/>
-<text text-anchor="middle" x="648.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BowEyebrow</text>
-<text text-anchor="start" x="596" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="596" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="start" x="596" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="middle" x="648.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="classm5avatar_1_1_toon_eye2.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="757,-129 588,-129 588,0 757,0 757,-129"/>
+<text text-anchor="middle" x="672.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::ToonEye2</text>
+<text text-anchor="start" x="596" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">||+ update2()</text>
+<text text-anchor="start" x="596" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">+ drawEyelid()</text>
+<text text-anchor="start" x="596" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">+ drawEyelash()</text>
+<text text-anchor="start" x="596" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ overwriteOpenRatio()</text>
+<text text-anchor="start" x="596" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="start" x="596" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="596" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="596" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00"># computeEyelidBaseWaypoints()</text>
+<text text-anchor="start" x="596" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00"># computeEyelashBaseWaypoints()</text>
+<text text-anchor="middle" x="672.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
-<title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M758.42,-188.55C729.66,-156.35 698.04,-120.96 676.13,-96.43"/>
-<polygon fill="none" stroke="#63b8ff" points="755.77,-190.84 765.04,-195.96 760.99,-186.17 755.77,-190.84"/>
+<!-- Node4&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node4&#45;&gt;Node9</title>
+<path fill="none" stroke="#63b8ff" d="M630.93,-154.6C634.96,-145.97 638.93,-137.46 642.73,-129.31"/>
+<polygon fill="none" stroke="#63b8ff" points="627.88,-152.86 626.83,-163.4 634.23,-155.82 627.88,-152.86"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classm5avatar_1_1_ellipse_eyebrow.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="857.5,-96 727.5,-96 727.5,-33 857.5,-33 857.5,-96"/>
-<text text-anchor="middle" x="792.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::EllipseEyebrow</text>
-<text text-anchor="start" x="735.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="735.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="start" x="735.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="middle" x="792.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node11"><a xlink:href="classm5avatar_1_1_bow_eyebrow.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="896,-96 775,-96 775,-33 896,-33 896,-96"/>
+<text text-anchor="middle" x="835.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BowEyebrow</text>
+<text text-anchor="start" x="783" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="783" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="start" x="783" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="middle" x="835.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node11 -->
+<!-- Node10&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
-<title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M812.15,-175.5C807.06,-146.97 801.78,-117.45 797.98,-96.18"/>
-<polygon fill="none" stroke="#63b8ff" points="808.7,-176.06 813.9,-185.29 815.59,-174.83 808.7,-176.06"/>
+<title>Node10&#45;&gt;Node11</title>
+<path fill="none" stroke="#63b8ff" d="M945.42,-188.55C916.66,-156.35 885.04,-120.96 863.13,-96.43"/>
+<polygon fill="none" stroke="#63b8ff" points="942.77,-190.84 952.04,-195.96 947.99,-186.17 942.77,-190.84"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="classm5avatar_1_1_rect_eyebrow.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="997.5,-96 875.5,-96 875.5,-33 997.5,-33 997.5,-96"/>
-<text text-anchor="middle" x="936.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::RectEyebrow</text>
-<text text-anchor="start" x="883.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="883.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="start" x="883.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
-<text text-anchor="middle" x="936.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node12"><a xlink:href="classm5avatar_1_1_ellipse_eyebrow.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1044.5,-96 914.5,-96 914.5,-33 1044.5,-33 1044.5,-96"/>
+<text text-anchor="middle" x="979.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::EllipseEyebrow</text>
+<text text-anchor="start" x="922.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="922.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="start" x="922.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="middle" x="979.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node12 -->
+<!-- Node10&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
-<title>Node9&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M876.73,-177.01C892.27,-148.02 908.45,-117.83 920.06,-96.18"/>
-<polygon fill="none" stroke="#63b8ff" points="873.85,-174.98 872.21,-185.45 880.02,-178.29 873.85,-174.98"/>
+<title>Node10&#45;&gt;Node12</title>
+<path fill="none" stroke="#63b8ff" d="M998.21,-170.22C993.42,-143.42 988.57,-116.25 985,-96.3"/>
+<polygon fill="none" stroke="#63b8ff" points="994.71,-170.54 999.91,-179.76 1001.6,-169.3 994.71,-170.54"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="classm5avatar_1_1_doggy_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1135,-96 1016,-96 1016,-33 1135,-33 1135,-96"/>
-<text text-anchor="middle" x="1075.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DoggyMouth</text>
-<text text-anchor="start" x="1024" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="1024" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="start" x="1024" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="middle" x="1075.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="classm5avatar_1_1_rect_eyebrow.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1184.5,-96 1062.5,-96 1062.5,-33 1184.5,-33 1184.5,-96"/>
+<text text-anchor="middle" x="1123.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::RectEyebrow</text>
+<text text-anchor="start" x="1070.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="1070.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="start" x="1070.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEyebrow()</text>
+<text text-anchor="middle" x="1123.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node14 -->
-<g id="edge13" class="edge">
-<title>Node13&#45;&gt;Node14</title>
-<path fill="none" stroke="#63b8ff" d="M1058.37,-158.77C1062.6,-135.77 1066.73,-113.28 1069.87,-96.16"/>
-<polygon fill="none" stroke="#63b8ff" points="1054.93,-158.13 1056.57,-168.6 1061.82,-159.39 1054.93,-158.13"/>
+<!-- Node10&#45;&gt;Node13 -->
+<g id="edge12" class="edge">
+<title>Node10&#45;&gt;Node13</title>
+<path fill="none" stroke="#63b8ff" d="M1066.8,-171.29C1081.35,-144.15 1096.16,-116.52 1106.99,-96.3"/>
+<polygon fill="none" stroke="#63b8ff" points="1063.81,-169.45 1062.17,-179.92 1069.98,-172.76 1063.81,-169.45"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="classm5avatar_1_1_omega_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1276,-96 1153,-96 1153,-33 1276,-33 1276,-96"/>
-<text text-anchor="middle" x="1214.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::OmegaMouth</text>
-<text text-anchor="start" x="1161" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="1161" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="start" x="1161" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="middle" x="1214.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node15"><a xlink:href="classm5avatar_1_1_doggy_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1322,-96 1203,-96 1203,-33 1322,-33 1322,-96"/>
+<text text-anchor="middle" x="1262.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::DoggyMouth</text>
+<text text-anchor="start" x="1211" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="1211" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="start" x="1211" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="middle" x="1262.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node15 -->
+<!-- Node14&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
-<title>Node13&#45;&gt;Node15</title>
-<path fill="none" stroke="#63b8ff" d="M1103.15,-166.59C1103.6,-166.06 1104.05,-165.53 1104.5,-165 1120.02,-146.8 1126.75,-145.03 1144.5,-129 1156.31,-118.33 1169.22,-106.63 1180.7,-96.21"/>
-<polygon fill="none" stroke="#63b8ff" points="1100.49,-164.31 1096.93,-174.29 1105.94,-168.72 1100.49,-164.31"/>
+<title>Node14&#45;&gt;Node15</title>
+<path fill="none" stroke="#63b8ff" d="M1245.37,-158.77C1249.6,-135.77 1253.73,-113.28 1256.87,-96.16"/>
+<polygon fill="none" stroke="#63b8ff" points="1241.93,-158.13 1243.57,-168.6 1248.82,-159.39 1241.93,-158.13"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="classm5avatar_1_1_rect_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1406.5,-96 1294.5,-96 1294.5,-33 1406.5,-33 1406.5,-96"/>
-<text text-anchor="middle" x="1350.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::RectMouth</text>
-<text text-anchor="start" x="1302.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="1302.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="start" x="1302.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="middle" x="1350.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node16"><a xlink:href="classm5avatar_1_1_omega_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1463,-96 1340,-96 1340,-33 1463,-33 1463,-96"/>
+<text text-anchor="middle" x="1401.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::OmegaMouth</text>
+<text text-anchor="start" x="1348" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="1348" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="start" x="1348" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="middle" x="1401.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node16 -->
+<!-- Node14&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
-<title>Node13&#45;&gt;Node16</title>
-<path fill="none" stroke="#63b8ff" d="M1105.57,-165.32C1175.91,-122.92 1216.06,-165.6 1285.5,-129 1300.71,-120.98 1314.75,-108.28 1325.86,-96.34"/>
-<polygon fill="none" stroke="#63b8ff" points="1103.68,-162.37 1097.18,-170.73 1107.48,-168.25 1103.68,-162.37"/>
+<title>Node14&#45;&gt;Node16</title>
+<path fill="none" stroke="#63b8ff" d="M1290.15,-166.59C1290.6,-166.06 1291.05,-165.53 1291.5,-165 1307.02,-146.8 1313.75,-145.03 1331.5,-129 1343.31,-118.33 1356.22,-106.63 1367.7,-96.21"/>
+<polygon fill="none" stroke="#63b8ff" points="1287.49,-164.31 1283.93,-174.29 1292.94,-168.72 1287.49,-164.31"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="classm5avatar_1_1_u_shape_mouth.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="1552,-96 1425,-96 1425,-33 1552,-33 1552,-96"/>
-<text text-anchor="middle" x="1488.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::UShapeMouth</text>
-<text text-anchor="start" x="1433" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
-<text text-anchor="start" x="1433" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="start" x="1433" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
-<text text-anchor="middle" x="1488.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<g id="a_node17"><a xlink:href="classm5avatar_1_1_rect_mouth.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1593.5,-96 1481.5,-96 1481.5,-33 1593.5,-33 1593.5,-96"/>
+<text text-anchor="middle" x="1537.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::RectMouth</text>
+<text text-anchor="start" x="1489.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="1489.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="start" x="1489.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="middle" x="1537.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node17 -->
+<!-- Node14&#45;&gt;Node17 -->
 <g id="edge16" class="edge">
-<title>Node13&#45;&gt;Node17</title>
-<path fill="none" stroke="#63b8ff" d="M1105.26,-165.5C1226.06,-96.23 1291.43,-183.75 1415.5,-129 1432.56,-121.47 1448.55,-108.53 1461.19,-96.29"/>
-<polygon fill="none" stroke="#63b8ff" points="1103.77,-162.31 1097,-170.46 1107.37,-168.31 1103.77,-162.31"/>
+<title>Node14&#45;&gt;Node17</title>
+<path fill="none" stroke="#63b8ff" d="M1292.57,-165.32C1362.91,-122.92 1403.06,-165.6 1472.5,-129 1487.71,-120.98 1501.75,-108.28 1512.86,-96.34"/>
+<polygon fill="none" stroke="#63b8ff" points="1290.68,-162.37 1284.18,-170.73 1294.48,-168.25 1290.68,-162.37"/>
+</g>
+<!-- Node18 -->
+<g id="node18" class="node">
+<title>Node18</title>
+<g id="a_node18"><a xlink:href="classm5avatar_1_1_toon_mouth1.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="1731,-96 1612,-96 1612,-33 1731,-33 1731,-96"/>
+<text text-anchor="middle" x="1671.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::ToonMouth1</text>
+<text text-anchor="start" x="1620" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">||+ draw()</text>
+<text text-anchor="start" x="1620" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="start" x="1620" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseMouth()</text>
+<text text-anchor="middle" x="1671.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node18 -->
+<g id="edge17" class="edge">
+<title>Node14&#45;&gt;Node18</title>
+<path fill="none" stroke="#63b8ff" d="M1292.26,-165.5C1413.1,-96.32 1479.21,-185.48 1602.5,-129 1618.93,-121.47 1634.08,-108.54 1645.98,-96.29"/>
+<polygon fill="none" stroke="#63b8ff" points="1290.77,-162.31 1284,-170.46 1294.37,-168.31 1290.77,-162.31"/>
 </g>
 </g>
 </svg>

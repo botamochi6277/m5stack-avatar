@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 578;
+var viewWidth = 765;
 var viewHeight = 467;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,25 +58,25 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="300,-371 197,-371 197,-165 300,-165 300,-371"/>
-<text text-anchor="middle" x="248.5" y="-359" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEye</text>
-<text text-anchor="start" x="205" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
-<text text-anchor="start" x="205" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
-<text text-anchor="start" x="205" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
-<text text-anchor="start" x="205" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
-<text text-anchor="start" x="205" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
-<text text-anchor="start" x="205" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
-<text text-anchor="start" x="205" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00"># gaze_</text>
-<text text-anchor="start" x="205" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_bg_color_</text>
-<text text-anchor="start" x="205" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
-<text text-anchor="start" x="205" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_x_</text>
-<text text-anchor="start" x="205" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_y_</text>
-<text text-anchor="start" x="205" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
-<text text-anchor="start" x="205" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
-<text text-anchor="start" x="205" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEye()</text>
-<text text-anchor="start" x="205" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
-<text text-anchor="start" x="205" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
-<text text-anchor="middle" x="248.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<polygon fill="#999999" stroke="#666666" points="369,-371 266,-371 266,-165 369,-165 369,-371"/>
+<text text-anchor="middle" x="317.5" y="-359" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::BaseEye</text>
+<text text-anchor="start" x="274" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">|# height_</text>
+<text text-anchor="start" x="274" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00"># width_</text>
+<text text-anchor="start" x="274" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00"># is_left_</text>
+<text text-anchor="start" x="274" y="-315" font-family="Helvetica,sans-Serif" font-size="10.00"># palette_</text>
+<text text-anchor="start" x="274" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00"># center_x_</text>
+<text text-anchor="start" x="274" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00"># center_y_</text>
+<text text-anchor="start" x="274" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00"># gaze_</text>
+<text text-anchor="start" x="274" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_bg_color_</text>
+<text text-anchor="start" x="274" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00"># skin_color_</text>
+<text text-anchor="start" x="274" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_x_</text>
+<text text-anchor="start" x="274" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00"># iris_y_</text>
+<text text-anchor="start" x="274" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00"># open_ratio_</text>
+<text text-anchor="start" x="274" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00"># expression_</text>
+<text text-anchor="start" x="274" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">|+ BaseEye()</text>
+<text text-anchor="start" x="274" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="274" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">+ update()</text>
+<text text-anchor="middle" x="317.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
@@ -96,8 +96,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M188.96,-205.48C154,-169.35 111.31,-125.23 83.31,-96.31"/>
-<polygon fill="none" stroke="#63b8ff" points="186.23,-207.69 195.7,-212.44 191.26,-202.82 186.23,-207.69"/>
+<path fill="none" stroke="#63b8ff" d="M256.04,-229.53C214.8,-203.31 160.07,-166.42 115.5,-129 103.7,-119.09 91.66,-107.24 81.36,-96.47"/>
+<polygon fill="none" stroke="#63b8ff" points="254.08,-232.43 264.41,-234.81 257.82,-226.51 254.08,-232.43"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -115,8 +115,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M209.8,-153.99C202.54,-132.79 195.54,-112.33 190.09,-96.43"/>
-<polygon fill="none" stroke="#63b8ff" points="206.45,-155.02 213,-163.34 213.08,-152.75 206.45,-155.02"/>
+<path fill="none" stroke="#63b8ff" d="M259.13,-181.77C238.34,-151.42 216.24,-119.15 200.61,-96.33"/>
+<polygon fill="none" stroke="#63b8ff" points="256.13,-183.59 264.67,-189.86 261.91,-179.63 256.13,-183.59"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -136,8 +136,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M287.11,-154.25C292.87,-137.41 298.48,-121.03 303.28,-107.02"/>
-<polygon fill="none" stroke="#63b8ff" points="283.92,-152.75 284,-163.34 290.55,-155.02 283.92,-152.75"/>
+<path fill="none" stroke="#63b8ff" d="M317.5,-153.3C317.5,-136.8 317.5,-120.77 317.5,-107.02"/>
+<polygon fill="none" stroke="#63b8ff" points="314,-153.26 317.5,-163.26 321,-153.26 314,-153.26"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -161,26 +161,51 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M308.75,-215.78C339.69,-189.47 377.68,-157.17 410.5,-129.27"/>
-<polygon fill="none" stroke="#63b8ff" points="306.72,-212.9 301.37,-222.05 311.26,-218.24 306.72,-212.9"/>
+<path fill="none" stroke="#63b8ff" d="M376.64,-196.06C394.72,-174.38 414.49,-150.68 432.15,-129.48"/>
+<polygon fill="none" stroke="#63b8ff" points="373.96,-193.81 370.25,-203.74 379.34,-198.3 373.96,-193.81"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="classm5avatar_1_1_toon_eye2.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="757,-129 588,-129 588,0 757,0 757,-129"/>
+<text text-anchor="middle" x="672.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::ToonEye2</text>
+<text text-anchor="start" x="596" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">||+ update2()</text>
+<text text-anchor="start" x="596" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">+ drawEyelid()</text>
+<text text-anchor="start" x="596" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">+ drawEyelash()</text>
+<text text-anchor="start" x="596" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ overwriteOpenRatio()</text>
+<text text-anchor="start" x="596" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="start" x="596" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="596" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">+ BaseEye()</text>
+<text text-anchor="start" x="596" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00"># computeEyelidBaseWaypoints()</text>
+<text text-anchor="start" x="596" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00"># computeEyelashBaseWaypoints()</text>
+<text text-anchor="middle" x="672.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node1&#45;&gt;Node7</title>
+<path fill="none" stroke="#63b8ff" d="M379.24,-236.99C433.03,-210.25 512.68,-169.23 579.5,-129 582.18,-127.39 584.89,-125.73 587.61,-124.03"/>
+<polygon fill="none" stroke="#63b8ff" points="377.93,-233.73 370.53,-241.3 381.04,-240 377.93,-233.73"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="classm5avatar_1_1_drawable.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="301,-459 196,-459 196,-407 301,-407 301,-459"/>
-<text text-anchor="middle" x="248.5" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Drawable</text>
-<text text-anchor="start" x="204" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">||+ ~Drawable()</text>
-<text text-anchor="start" x="204" y="-425" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
-<text text-anchor="middle" x="248.5" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
+<polygon fill="white" stroke="#bfbfbf" points="370,-459 265,-459 265,-407 370,-407 370,-459"/>
+<text text-anchor="middle" x="317.5" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">{m5avatar::Drawable</text>
+<text text-anchor="start" x="273" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">||+ ~Drawable()</text>
+<text text-anchor="start" x="273" y="-425" font-family="Helvetica,sans-Serif" font-size="10.00">+ draw()</text>
+<text text-anchor="middle" x="317.5" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">}</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M248.5,-395.2C248.5,-387.82 248.5,-379.72 248.5,-371.3"/>
-<polygon fill="none" stroke="#63b8ff" points="245,-395.02 248.5,-405.02 252,-395.02 245,-395.02"/>
+<path fill="none" stroke="#63b8ff" d="M317.5,-395.2C317.5,-387.82 317.5,-379.72 317.5,-371.3"/>
+<polygon fill="none" stroke="#63b8ff" points="314,-395.02 317.5,-405.02 321,-395.02 314,-395.02"/>
 </g>
 </g>
 </svg>
