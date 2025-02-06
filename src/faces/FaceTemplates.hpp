@@ -92,7 +92,7 @@ class ToonFace1 : public Face {
 class PinkDemonFace : public Face {
  public:
   PinkDemonFace()
-      : Face(new ToonMouth1(64, 64, 0, 16), new BoundingRect(214, 160),
+      : Face(new ToonMouth1(64, 64, 4, 16), new BoundingRect(214, 160),
              // right eye, second eye arg is center position of eye
              new PinkDemonEye(52, 134, false), new BoundingRect(134, 106),
              //  left eye

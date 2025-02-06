@@ -30,7 +30,7 @@ Pre-assembled faces are available and defined in [src/faces/FaceTemplates.hpp](.
 |<img src="https://github.com/user-attachments/assets/5908e69f-9674-43df-a933-9f8d24fa488c/" width=20% alt="SimpleFace">|`SimpleFace`| `EllipseEye` | `RectMouth` | -- | Alternative  implementation of (Native) `Face`
 |<img src="https://github.com/user-attachments/assets/5457eaec-a774-46f5-90dd-7ee1a3e13c03" width=20% alt="DoggyFace">|`DoggyFace`|`DoggyEye`|`DoggyMouth`|`RectEyebrow`|Alternative  implementation of `DogFace`|
 |<img src="https://github.com/user-attachments/assets/0ddd047a-76bf-450f-8a32-d245fdc40380" width=20% alt="OmegaFace">|`OmegaFace`|`EllipseEye`|`OmegaMouth`|--||
-|<img src="https://github.com/user-attachments/assets/fc0a5d3f-bf0d-4563-aa19-1e2d565e83aa" width=20% alt="GirlyFace">|`GirlyFace`|`ToonEye1`|`UShapeMouth`|`EllipseEyebrow`||
+|<img src="https://github.com/user-attachments/assets/fc0a5d3f-bf0d-4563-aa19-1e2d565e83aa" width=20% alt="GirlyFace">|`GirlyFace`|`ToonEye1`|`ToonMouth1`|`EllipseEyebrow`||
 
 ## Eyes
 
@@ -47,7 +47,7 @@ Predefined mouth components are in [src/Mouths.hpp](../src/Mouths.hpp) and [src/
 
 - `RectMouth` (Alternative implement of `Mouth`)
 - `OmegaMouth`
-- `UShapeMouth`
+- `ToonMouth1`
 - `DoggyMouth` (Alternative implement of `DogMouth`)
 
 ## Eyebrows

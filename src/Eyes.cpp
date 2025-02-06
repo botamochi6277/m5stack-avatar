@@ -334,7 +334,7 @@ void ToonEye2::drawEyelid(M5Canvas *canvas) {
   eyelash_y2 = upper_eyelid_y;
 
   float tilt = 0.0f;
-  float ref_tilt = open_ratio_ * M_PI / 6.0f;
+  float ref_tilt = open_ratio_ * M_PI / 12.0f;
   float bias;
   if (expression_ == Expression::kAngry) {
     tilt = this->is_left_ ? -ref_tilt : ref_tilt;
@@ -349,7 +349,7 @@ void ToonEye2::drawEyelid(M5Canvas *canvas) {
     float mask_top_left_x = iris_x_ - (this->width_ / 2);
     float mask_top_left_y = iris_y_ - 0.75f * this->height_;
     float mask_bottom_right_x = iris_x_ + (this->width_ / 2);
-    float mask_bottom_right_y = upper_eyelid_y;
+    float mask_bottom_right_y = upper_eyelid_y - 1;
 
     fillRectRotatedAround(canvas, mask_top_left_x, mask_top_left_y,
                           mask_bottom_right_x, mask_bottom_right_y, tilt,
