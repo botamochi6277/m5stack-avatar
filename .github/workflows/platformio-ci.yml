@@ -23,6 +23,6 @@ jobs:
     - name: Install PlatformIO Core
       run: pip install --upgrade platformio
     - name: Build PlatformIO examples
-      run: pio ci --board=m5stack-atom  -l ./src
+      run: pio ci --board=m5stack-core-esp32  -l ./src
       env:
         PLATFORMIO_CI_SRC: ${{ matrix.example }}
