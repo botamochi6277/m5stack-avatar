@@ -31,6 +31,7 @@ var NAVTREEINDEX0 =
 "annotated.html":[1,0],
 "classes.html":[1,1],
 "classm5avatar_1_1_avatar.html":[1,0,0,0],
+"classm5avatar_1_1_avatar.html#a16c79f853e0782b56fa6c01e48df8038":[1,0,0,0,1],
 "classm5avatar_1_1_avatar.html#ae95e9740e963d5b4647dde8d40b07aa2":[1,0,0,0,0],
 "classm5avatar_1_1_b_m_p_eye.html":[1,0,0,6],
 "classm5avatar_1_1_b_m_p_face.html":[1,0,0,7],
