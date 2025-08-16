@@ -58,6 +58,7 @@ class Avatar {
   BatteryIconStatus batteryIconStatus;
   int32_t batteryLevel;
   const lgfx::IFont *speechFont;
+  bool runing_in_x_task_;
 
  public:
   Avatar();
@@ -110,6 +111,7 @@ class Avatar {
   void setRotation(float radian);
   void setPosition(int top, int left);
   void setScale(float scale);
+  void setColorDepth(int color_depth = 1);
   void draw(void);
   bool isDrawing();
   void start(int colorDepth = 1);
@@ -120,6 +122,8 @@ class Avatar {
                const BaseType_t core_id = APP_CPU_NUM);
   void suspend();
   void resume();
+  void update();
+  void updateFacialParameters();
   void setBatteryIcon(bool iconStatus);
   void setBatteryStatus(bool isCharging, int32_t batteryLevel);
 };

@@ -153,13 +153,71 @@ void Avatar::init(int colorDepth) {
 
 void Avatar::stop() { _isDrawing = false; }
 
+/**
+ * @brief update drawings in the display and facial parameters
+ *
+ */
+void Avatar::update() {
+  this->draw();  // update drawings in the display
+  // update facial parameters
+  this->updateFacialParameters();
+}
+
+void Avatar::updateFacialParameters() {
+  static unsigned long mill_sec = 0;
+  static unsigned long last_saccade_millis = 0;
+  static unsigned long last_blink_millis = 0;
+  static uint32_t saccade_interval = 1000;  // [msec]
+  static uint32_t blink_interval = 1000;
+  static bool eye_open = true;
+
+  mill_sec = millis();
+
+  float vertical = 0.0f;
+  float horizontal = 0.0f;
+  float breath = 0.0f;
+
+  if ((mill_sec - last_saccade_millis) > saccade_interval) {
+    vertical = _rand() / (RAND_MAX / 2.0f) - 1.0f;
+    horizontal = _rand() / (RAND_MAX / 2.0f) - 1.0f;
+    this->setRightGaze(vertical, horizontal);
+    this->setLeftGaze(vertical, horizontal);
+    saccade_interval = 500 + 100 * random(20);
+    last_saccade_millis = mill_sec;
+  }
+
+  if ((this->getIsAutoBlink()) &&
+      ((mill_sec - last_blink_millis) > blink_interval)) {
+    if (eye_open) {
+      this->setEyeOpenRatio(1.0f);
+      blink_interval = 2500 + 100 * random(20);
+    } else {
+      this->setEyeOpenRatio(0.0f);
+      blink_interval = 300 + 10 * random(20);
+    }
+    eye_open = !eye_open;
+    last_blink_millis = mill_sec;
+  }
+
+  // update breath
+  // 0.2 Hz
+  breath = sinf(0.2f * 2.0f * PI * (mill_sec / 1000.0f));
+  this->setBreath(breath);
+}
+
 void Avatar::suspend() {
+  if (!this->runing_in_x_task_) {
+    return;
+  }
 #ifndef SDL_h_
   vTaskSuspend(drawTaskHandle);
 #endif
 }
 
 void Avatar::resume() {
+  if (!this->runing_in_x_task_) {
+    return;
+  }
 #ifndef SDL_h_
   vTaskResume(drawTaskHandle);
 #endif
@@ -172,6 +230,7 @@ void Avatar::start(int colorDepth) {
 
   this->colorDepth = colorDepth;
   DriveContext *ctx = new DriveContext(this);
+  this->runing_in_x_task_ = true;
 #ifdef SDL_h_
   drawTaskHandle =
       SDL_CreateThreadWithStackSize(drawLoop, "drawLoop", 2048, ctx);
@@ -308,6 +367,13 @@ void Avatar::setBatteryStatus(bool isCharging, int32_t batteryLevel) {
     }
     this->batteryLevel = batteryLevel;
   }
+}
+
+void Avatar::setColorDepth(int color_depth) {
+  if (color_depth < 1) {
+    color_depth = 1;
+  }
+  this->colorDepth = color_depth;
 }
 
 }  // namespace m5avatar

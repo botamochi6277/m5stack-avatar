@@ -18,6 +18,11 @@
 #include "DrawingUtils.hpp"
 namespace m5avatar {
 
+// pure drawing functions
+void drawStraightEyelid(M5Canvas *canvas, int16_t x, int16_t y, int16_t width,
+                        int16_t height, uint16_t color);
+// base class for eyes
+
 class BaseEye : public Drawable {
  protected:
   uint16_t height_;

@@ -1,6 +1,12 @@
 #include "Eyes.hpp"
 
 namespace m5avatar {
+
+void drawStraightEyelid(M5Canvas *canvas, int16_t cx, int16_t cy, int16_t width,
+                        int16_t height, int16_t tilt, ColorPalette *palette) {
+  auto skin_color = palette->get(DrawingLocation::kSkin);
+}
+
 BaseEye::BaseEye(bool is_left) : BaseEye(36, 70, is_left) {}
 
 BaseEye::BaseEye(uint16_t width, uint16_t height, bool is_left) {
